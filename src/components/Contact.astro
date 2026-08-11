@@ -1,0 +1,21 @@
+---
+import { site } from "../data/site";
+import SectionMarker from "./SectionMarker.astro";
+---
+
+<section id="contacto" class="section contact section-identified" aria-labelledby="contact-title">
+  <SectionMarker number="10" label="Contacto" />
+  <div class="container contact-grid">
+    <div data-reveal>
+      <p class="eyebrow"><span></span> Contacto</p>
+      <h2 id="contact-title">Conversemos.</h2>
+      <p>Si no sabes qué tipo de atención necesitas, nuestro equipo puede orientarte.</p>
+    </div>
+    <dl class="contact-list" data-reveal>
+      <div><dt>WhatsApp</dt><dd><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">{site.phone} ↗</a></dd></div>
+      <div><dt>Correo</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+      <div><dt>Ubicación</dt><dd>{site.address}<br /><a href={site.maps} target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a></dd></div>
+      <div><dt>Horario</dt><dd>{site.hours}</dd></div>
+    </dl>
+  </div>
+</section>

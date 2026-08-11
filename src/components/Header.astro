@@ -1,0 +1,42 @@
+---
+import { navigation, site } from "../data/site";
+---
+
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label={`${site.name}, ir al inicio`}>
+      <span class="brand-mark" aria-hidden="true">I</span>
+      <span class="brand-copy">
+        <strong>{site.shortName}</strong>
+        <small>{site.name}</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+      <span></span><span></span>
+    </button>
+
+    <nav id="main-menu" class="main-nav" aria-label="Navegación principal">
+      {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      <a class="button button-small" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const menu = document.querySelector<HTMLElement>(".main-nav");
+  const closeMenu = () => {
+    button?.setAttribute("aria-expanded", "false");
+    menu?.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+  };
+  button?.addEventListener("click", () => {
+    const open = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(open));
+    menu?.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+  });
+  menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", (event) => event.key === "Escape" && closeMenu());
+</script>

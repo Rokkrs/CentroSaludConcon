@@ -1,0 +1,20 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  context: string;
+  validated?: boolean;
+  featured?: boolean;
+}
+
+const { quote, author, context, validated = false, featured = false } = Astro.props;
+---
+
+<article class:list={["testimonial-card-simple", { "testimonial-card-featured": featured }]}>
+  <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+  <blockquote>{quote}</blockquote>
+  <footer>
+    <div><strong>{author}</strong><span>{context}</span></div>
+    {!validated && <small>Contenido demostrativo</small>}
+  </footer>
+</article>

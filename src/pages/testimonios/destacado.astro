@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import TestimonialsCompareNav from "../../components/TestimonialsCompareNav.astro";
+import TestimonialCard from "../../components/TestimonialCard.astro";
+import { site } from "../../data/site";
+import { allTestimonials } from "../../data/testimonials";
+const [featured, ...rest] = allTestimonials;
+---
+
+<BaseLayout title={`Testimonio destacado | ${site.name}`} description="Propuesta editorial con un testimonio destacado.">
+  <Header /><TestimonialsCompareNav />
+  <main class="simple-testimonials featured-version">
+    <section class="simple-testimonials-hero"><div class="container"><p class="eyebrow"><span></span> Versión 02 · Editorial</p><h1>Una historia central. <em>Otras voces que la acompañan.</em></h1></div></section>
+    <section class="featured-testimonial-layout"><div class="container featured-testimonial-inner"><TestimonialCard {...featured} featured /><div class="featured-video"><span aria-hidden="true">▶</span><strong>Video testimonial</strong><small>Contenido futuro opcional</small></div></div></section>
+    <section class="simple-testimonials-body"><div class="container simple-cards-grid compact-cards-grid">{rest.map((item) => <TestimonialCard {...item} />)}</div></section>
+    <section class="simple-testimonials-footer"><div class="container"><p>Una experiencia destacada requiere selección editorial y consentimiento específico.</p><a class="button" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a></div></section>
+  </main><Footer />
+</BaseLayout>

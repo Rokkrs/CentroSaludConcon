@@ -1,0 +1,19 @@
+---
+import SectionMarker from "./SectionMarker.astro";
+
+const items = [
+  ["4.500+", "Evaluaciones clínicas"],
+  ["15", "Regiones de Chile atendidas"],
+  ["Nacional", "Atención nacional e internacional"],
+  ["Híbrida", "Atención presencial y online"],
+];
+---
+
+<section class="trust-bar section-identified" aria-label="Nuestros pilares">
+  <SectionMarker number="02" label="Indicadores de confianza" />
+  <div class="container trust-grid">
+    {items.map(([number, label]) => (
+      <div class="trust-item"><span>{number}</span><p>{label}</p></div>
+    ))}
+  </div>
+</section>

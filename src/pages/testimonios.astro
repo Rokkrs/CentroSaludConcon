@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+
+const options = [
+  {
+    number: "01",
+    title: "Grilla de cards",
+    description: "La alternativa más simple, flexible y económica de mantener.",
+    strengths: ["Agrega testimonios fácilmente", "Excelente en celular", "Sin filtros ni jerarquías manuales"],
+    href: "/testimonios/cards/",
+    recommendation: true,
+  },
+  {
+    number: "02",
+    title: "Destacado + cards",
+    description: "Una historia principal genera más impacto emocional y el resto mantiene un formato sencillo.",
+    strengths: ["Mayor impacto editorial", "Permite destacar un video", "Requiere elegir la historia principal"],
+    href: "/testimonios/destacado/",
+  },
+  {
+    number: "03",
+    title: "Por categorías",
+    description: "Organiza las experiencias por tipo de atención cuando existe un volumen mayor de contenido.",
+    strengths: ["Facilita explorar por interés", "Escala a muchos testimonios", "Mayor mantenimiento"],
+    href: "/testimonios/categorias/",
+  },
+];
+---
+
+<BaseLayout title={`Comparar testimonios | ${site.name}`} description="Tres alternativas para la página de testimonios de Instituto Incluidos.">
+  <Header />
+  <main class="comparison-page">
+    <section class="comparison-hero">
+      <div class="container comparison-hero-inner">
+        <p class="eyebrow"><span></span> Comparación de propuestas</p>
+        <h1>Tres formas de presentar <em>experiencias reales.</em></h1>
+        <p>El contenido es el mismo en las tres versiones. Compara cuál comunica mejor y cuál será más fácil de mantener.</p>
+      </div>
+    </section>
+    <section class="comparison-options">
+      <div class="container comparison-grid">
+        {options.map((option) => (
+          <article class="comparison-card">
+            <div class="comparison-card-top"><span>{option.number}</span>{option.recommendation && <strong>Recomendada</strong>}</div>
+            <h2>{option.title}</h2>
+            <p>{option.description}</p>
+            <ul>{option.strengths.map((item) => <li>✓ {item}</li>)}</ul>
+            <a class="button" href={option.href}>Ver versión {option.number} <span aria-hidden="true">→</span></a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import SectionMarker from "./SectionMarker.astro";
+
+const steps = [
+  ["Reserva tu hora", "Elige la disponibilidad que mejor se ajuste a ti mediante Reservo."],
+  ["Cuéntanos tu motivo", "Antes de comenzar, queremos comprender qué necesitas y qué esperas del proceso."],
+  ["Primera evaluación", "Conocerás al profesional y podrán definir juntos el foco inicial de atención."],
+  ["Próximos pasos", "Recibirás una orientación clara y personalizada para continuar."],
+];
+---
+
+<section id="proceso" class="section process section-identified" aria-labelledby="process-title">
+  <SectionMarker number="08" label="Proceso de atención" />
+  <div class="container">
+    <div class="process-heading" data-reveal>
+      <p class="eyebrow"><span></span> Cómo comenzar</p>
+      <h2 id="process-title">Un primer paso simple.<br /><em>Un proceso pensado contigo.</em></h2>
+      <p>Queremos que desde el inicio sepas qué esperar.</p>
+    </div>
+    <ol class="steps">
+      {steps.map(([title, text], index) => (
+        <li data-reveal>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <div><h3>{title}</h3><p>{text}</p></div>
+        </li>
+      ))}
+    </ol>
+    <p class="content-note">Flujo demostrativo pendiente de confirmación con el centro.</p>
+  </div>
+</section>

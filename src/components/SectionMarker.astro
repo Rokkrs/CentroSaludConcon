@@ -1,0 +1,13 @@
+---
+interface Props {
+  number: string;
+  label: string;
+  light?: boolean;
+}
+
+const { number, label, light = false } = Astro.props;
+---
+
+<span class:list={["section-marker", { "section-marker-light": light }]} aria-label={`Sección ${number}: ${label}`} title={`Sección ${number}: ${label}`}>
+  {number}
+</span>

@@ -1,0 +1,20 @@
+---
+import { navigation, site } from "../data/site";
+import SectionMarker from "./SectionMarker.astro";
+---
+
+<footer class="footer section-identified">
+  <SectionMarker number="11" label="Pie de página" light />
+  <div class="container footer-grid">
+    <div>
+      <a class="brand brand-light" href="/">
+        <span class="brand-mark" aria-hidden="true">I</span>
+        <span class="brand-copy"><strong>{site.shortName}</strong><small>{site.name}</small></span>
+      </a>
+      <p>{site.tagline}</p>
+    </div>
+    <div><h3>Explora</h3><nav aria-label="Navegación de pie">{navigation.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</nav></div>
+    <div><h3>Contacto</h3><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">{site.phone}</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 {site.name}. Todos los derechos reservados.</span><a href="#">Política de privacidad</a></div>
+</footer>

@@ -1,0 +1,27 @@
+---
+import SectionMarker from "./SectionMarker.astro";
+
+const attributes = [
+  "Atención ética y profesional",
+  "Formación continua",
+  "Trabajo interdisciplinario",
+  "Acompañamiento personalizado",
+];
+---
+
+<section class="section about section-identified" aria-labelledby="about-title">
+  <SectionMarker number="05" label="Quiénes somos" />
+  <div class="container split-layout">
+    <div data-reveal>
+      <p class="eyebrow"><span></span> Quiénes somos</p>
+      <h2 id="about-title">Conocimiento que orienta.<br /><em>Cercanía que acompaña.</em></h2>
+    </div>
+    <div class="about-copy" data-reveal>
+      <p class="large-copy">Creemos en una atención donde la evidencia y la empatía no compiten: se complementan.</p>
+      <p>Reunimos distintas especialidades para comprender a cada persona de manera integral, tomar decisiones informadas y construir un camino posible junto a ella y su entorno.</p>
+      <ul class="check-list">
+        {attributes.map((attribute) => <li><span aria-hidden="true">✓</span>{attribute}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

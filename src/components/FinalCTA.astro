@@ -1,0 +1,22 @@
+---
+import { site } from "../data/site";
+import SectionMarker from "./SectionMarker.astro";
+---
+
+<section class="final-cta section-identified" aria-labelledby="cta-title">
+  <SectionMarker number="09" label="Llamado a agendar" light />
+  <div class="cta-orbit" aria-hidden="true"></div>
+  <div class="container cta-grid" data-reveal>
+    <div>
+      <p class="eyebrow light"><span></span> Agenda tu evaluación</p>
+      <h2 id="cta-title">Cada persona merece ser comprendida <em>desde sus fortalezas.</em></h2>
+    </div>
+    <div class="cta-copy">
+      <p>Una evaluación rigurosa puede orientar los próximos pasos y transformar la trayectoria de una persona y su familia.</p>
+      <div class="cta-actions">
+        <a class="button" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a>
+        <a class="button button-outline-light" href={site.whatsapp} target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>

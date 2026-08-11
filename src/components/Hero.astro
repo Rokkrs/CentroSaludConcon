@@ -1,0 +1,47 @@
+---
+import { site } from "../data/site";
+import SectionMarker from "./SectionMarker.astro";
+---
+
+<main id="inicio">
+  <section class="hero section-identified">
+    <SectionMarker number="01" label="Presentación y agenda" />
+    <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy" data-reveal>
+        <p class="eyebrow"><span></span> Ciencia · investigación · derechos · inclusión</p>
+        <h1>Centro de Referencia en <em>Neurodivergencia</em> de Chile.</h1>
+        <p class="hero-lead">
+          Evaluación, diagnóstico e intervención interdisciplinaria basada en evidencia para niños, adolescentes y adultos.
+        </p>
+        <p class="hero-detail">Atención rigurosa, humana y actualizada, con experiencia clínica y compromiso con los derechos de las personas neurodivergentes.</p>
+        <div class="hero-actions">
+          <a class="button" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#servicios">Ver especialidades <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-proof">
+          <span class="proof-symbol" aria-hidden="true">✓</span>
+          <p><strong>Exclusivamente en neurodivergencia</strong><br />Atención presencial y online</p>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-reveal>
+        <div class="hero-photo-wrap hero-photo-reference">
+          <img
+            src="/images/reference/client-reference.jpeg"
+            alt="Profesional del centro acompañando a un niño durante una evaluación"
+            width="850"
+            height="1280"
+            fetchpriority="high"
+          />
+          <div class="photo-wash" aria-hidden="true"></div>
+        </div>
+        <aside class="hero-note">
+          <span class="note-icon" aria-hidden="true">✦</span>
+          <p>Atención que transforma vidas.</p>
+        </aside>
+        <span class="hero-caption">01 · Atención especializada</span>
+      </div>
+    </div>
+  </section>
+</main>

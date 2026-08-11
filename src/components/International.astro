@@ -1,0 +1,31 @@
+---
+import SectionMarker from "./SectionMarker.astro";
+
+const initiatives = [
+  { acronym: "ION", name: "Institute of Neurodiversity" },
+  { acronym: "GNA", name: "Global Neurodiversity Association" },
+  { acronym: "AutismCRC", name: "Cooperative Research Centre" },
+];
+---
+
+<section class="international section-identified" aria-labelledby="international-title">
+  <SectionMarker number="03" label="Compromiso internacional" />
+  <div class="container international-grid" data-reveal>
+    <div class="international-copy">
+      <span class="globe" aria-hidden="true">◎</span>
+      <div>
+        <p class="eyebrow"><span></span> Compromiso internacional</p>
+        <h2 id="international-title">Conectados con el conocimiento que impulsa la neurodiversidad.</h2>
+        <p>Vinculación con iniciativas internacionales para promover la inclusión y los derechos de las personas neurodivergentes.</p>
+      </div>
+    </div>
+    <div class="initiatives" aria-label="Iniciativas internacionales vinculadas">
+      <p>Vinculados a iniciativas internacionales</p>
+      <div>
+        {initiatives.map((item) => (
+          <article><strong>{item.acronym}</strong><span>{item.name}</span></article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

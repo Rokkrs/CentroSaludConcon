@@ -1,0 +1,51 @@
+---
+import { services } from "../data/services";
+import { site } from "../data/site";
+import SectionMarker from "./SectionMarker.astro";
+
+const clinicalServices = services.filter((service) => service.category === "clinical");
+const assessments = services.filter((service) => service.category === "assessment");
+---
+
+<section id="servicios" class="section services section-identified" aria-labelledby="services-title">
+  <SectionMarker number="04" label="Especialidades" light />
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <div>
+        <p class="eyebrow light"><span></span> Nuestras especialidades</p>
+        <h2 id="services-title">Evaluación e intervención<br /><em>exclusivamente en neurodivergencia.</em></h2>
+      </div>
+      <p>Especialidades coordinadas para niños, adolescentes y adultos.</p>
+    </div>
+    <div class="service-group" data-reveal>
+      <div class="service-group-heading">
+        <span>01</span>
+        <div><h3>Atención clínica</h3><p>Acompañamiento profesional interdisciplinario.</p></div>
+      </div>
+      <div class="services-grid services-grid-clinical">
+        {clinicalServices.map((service) => (
+          <article class="service-card" data-reveal>
+            <span class="service-number">{service.number}</span>
+            <div><h3>{service.title}</h3><p>{service.description}</p></div>
+            <a href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>Agendar atención <span aria-hidden="true">↗</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="service-group service-group-assessments" data-reveal>
+      <div class="service-group-heading">
+        <span>02</span>
+        <div><h3>Evaluaciones especializadas</h3><p>Procesos rigurosos para orientar decisiones clínicas.</p></div>
+      </div>
+      <div class="services-grid services-grid-assessments">
+        {assessments.map((service) => (
+          <article class="service-card service-card-assessment" data-reveal>
+            <span class="service-number">{service.number}</span>
+            <div><h3>{service.title}</h3><p>{service.description}</p></div>
+            <a href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>Agendar evaluación <span aria-hidden="true">↗</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

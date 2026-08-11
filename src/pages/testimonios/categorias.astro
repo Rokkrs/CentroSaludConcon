@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import TestimonialsCompareNav from "../../components/TestimonialsCompareNav.astro";
+import TestimonialCard from "../../components/TestimonialCard.astro";
+import { site } from "../../data/site";
+import { allTestimonials } from "../../data/testimonials";
+
+const groups = [
+  { title: "Evaluaciones", items: allTestimonials.filter((item) => item.context.toLowerCase().includes("evaluación")) },
+  { title: "Acompañamiento y familias", items: allTestimonials.filter((item) => !item.context.toLowerCase().includes("evaluación")) },
+];
+---
+
+<BaseLayout title={`Testimonios por categorías | ${site.name}`} description="Propuesta de testimonios organizados por atención.">
+  <Header /><TestimonialsCompareNav />
+  <main class="simple-testimonials categories-version">
+    <section class="simple-testimonials-hero"><div class="container"><p class="eyebrow"><span></span> Versión 03 · Escalable</p><h1>Encuentra experiencias según <em>el tipo de atención.</em></h1><nav class="category-shortcuts">{groups.map((group) => <a href={`#${group.title.toLowerCase().replaceAll(" ", "-")}`}>{group.title}</a>)}</nav></div></section>
+    {groups.map((group, groupIndex) => (
+      <section id={group.title.toLowerCase().replaceAll(" ", "-")} class:list={["category-testimonial-section", { "category-testimonial-alt": groupIndex % 2 === 1 }]}>
+        <div class="container category-testimonial-layout"><div class="category-testimonial-heading"><span>0{groupIndex + 1}</span><h2>{group.title}</h2><p>{group.items.length} experiencias en esta categoría.</p></div><div class="category-cards-grid">{group.items.map((item) => <TestimonialCard {...item} />)}</div></div>
+      </section>
+    ))}
+    <section class="simple-testimonials-footer"><div class="container"><p>Las categorías serán útiles cuando exista un volumen mayor de testimonios validados.</p><a class="button" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a></div></section>
+  </main><Footer />
+</BaseLayout>
