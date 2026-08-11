@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://institutoincluidos.cl/</loc>
+    <loc>https://rokkrs.github.io/CentroSaludConcon/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://institutoincluidos.cl/testimonios/</loc>
+    <loc>https://rokkrs.github.io/CentroSaludConcon/testimonios/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url><loc>https://institutoincluidos.cl/testimonios/cards/</loc><priority>0.4</priority></url>
-  <url><loc>https://institutoincluidos.cl/testimonios/destacado/</loc><priority>0.4</priority></url>
-  <url><loc>https://institutoincluidos.cl/testimonios/categorias/</loc><priority>0.4</priority></url>
+  <url><loc>https://rokkrs.github.io/CentroSaludConcon/testimonios/cards/</loc><priority>0.4</priority></url>
+  <url><loc>https://rokkrs.github.io/CentroSaludConcon/testimonios/destacado/</loc><priority>0.4</priority></url>
+  <url><loc>https://rokkrs.github.io/CentroSaludConcon/testimonios/categorias/</loc><priority>0.4</priority></url>
 </urlset>

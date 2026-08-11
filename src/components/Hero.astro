@@ -1,5 +1,5 @@
 ---
-import { site } from "../data/site";
+import { site, withBase } from "../data/site";
 import SectionMarker from "./SectionMarker.astro";
 ---
 
@@ -28,7 +28,7 @@ import SectionMarker from "./SectionMarker.astro";
       <div class="hero-visual" data-reveal>
         <div class="hero-photo-wrap hero-photo-reference">
           <img
-            src="/images/reference/client-reference.jpeg"
+            src={withBase("images/reference/client-reference.jpeg")}
             alt="Profesional del centro acompañando a un niño durante una evaluación"
             width="850"
             height="1280"

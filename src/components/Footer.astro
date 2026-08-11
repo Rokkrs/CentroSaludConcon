@@ -1,5 +1,5 @@
 ---
-import { navigation, site } from "../data/site";
+import { navigation, site, withBase } from "../data/site";
 import SectionMarker from "./SectionMarker.astro";
 ---
 
@@ -7,7 +7,7 @@ import SectionMarker from "./SectionMarker.astro";
   <SectionMarker number="11" label="Pie de página" light />
   <div class="container footer-grid">
     <div>
-      <a class="brand brand-light" href="/">
+      <a class="brand brand-light" href={withBase()}>
         <span class="brand-mark" aria-hidden="true">I</span>
         <span class="brand-copy"><strong>{site.shortName}</strong><small>{site.name}</small></span>
       </a>

@@ -1,10 +1,10 @@
 ---
-import { navigation, site } from "../data/site";
+import { navigation, site, withBase } from "../data/site";
 ---
 
 <header class="site-header" data-header>
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label={`${site.name}, ir al inicio`}>
+    <a class="brand" href={withBase()} aria-label={`${site.name}, ir al inicio`}>
       <span class="brand-mark" aria-hidden="true">I</span>
       <span class="brand-copy">
         <strong>{site.shortName}</strong>

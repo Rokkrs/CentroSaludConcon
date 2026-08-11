@@ -14,10 +14,15 @@ export const site = {
   hours: "Lunes a viernes · 09:00 a 19:00",
 };
 
+export const withBase = (path = "") => {
+  const base = `${import.meta.env.BASE_URL.replace(/\/+$/, "")}/`;
+  return `${base}${path.replace(/^\/+/, "")}`;
+};
+
 export const navigation = [
-  { label: "Especialidades", href: "/#servicios" },
-  { label: "Equipo", href: "/#equipo" },
-  { label: "Testimonios", href: "/testimonios/" },
-  { label: "Investigación", href: "/#trayectoria" },
-  { label: "Contacto", href: "/#contacto" },
+  { label: "Especialidades", href: withBase("#servicios") },
+  { label: "Equipo", href: withBase("#equipo") },
+  { label: "Testimonios", href: withBase("testimonios/") },
+  { label: "Investigación", href: withBase("#trayectoria") },
+  { label: "Contacto", href: withBase("#contacto") },
 ];

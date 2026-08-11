@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { withBase } from "../data/site";
 import { site } from "../data/site";
 
 const options = [
@@ -10,7 +11,7 @@ const options = [
     title: "Grilla de cards",
     description: "La alternativa más simple, flexible y económica de mantener.",
     strengths: ["Agrega testimonios fácilmente", "Excelente en celular", "Sin filtros ni jerarquías manuales"],
-    href: "/testimonios/cards/",
+    href: withBase("testimonios/cards/"),
     recommendation: true,
   },
   {
@@ -18,14 +19,14 @@ const options = [
     title: "Destacado + cards",
     description: "Una historia principal genera más impacto emocional y el resto mantiene un formato sencillo.",
     strengths: ["Mayor impacto editorial", "Permite destacar un video", "Requiere elegir la historia principal"],
-    href: "/testimonios/destacado/",
+    href: withBase("testimonios/destacado/"),
   },
   {
     number: "03",
     title: "Por categorías",
     description: "Organiza las experiencias por tipo de atención cuando existe un volumen mayor de contenido.",
     strengths: ["Facilita explorar por interés", "Escala a muchos testimonios", "Mayor mantenimiento"],
-    href: "/testimonios/categorias/",
+    href: withBase("testimonios/categorias/"),
   },
 ];
 ---
