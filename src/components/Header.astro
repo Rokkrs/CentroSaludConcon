@@ -33,6 +33,37 @@ import { navigation, site, withBase } from "../data/site";
     menu?.classList.toggle("is-open", open);
     document.body.classList.toggle("menu-open", open);
   });
-  menu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+  const cleanHash = () => history.replaceState(null, "", `${location.pathname}${location.search}`);
+
+  menu?.querySelectorAll<HTMLAnchorElement>("a").forEach((link) =>
+    link.addEventListener("click", (event) => {
+      const destination = new URL(link.href, location.href);
+      const target = destination.hash ? document.querySelector<HTMLElement>(destination.hash) : null;
+      const samePage = destination.pathname === location.pathname;
+
+      if (samePage && target) {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        cleanHash();
+      }
+
+      closeMenu();
+    }),
+  );
+
+  if (location.hash) {
+    window.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        cleanHash();
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      },
+      { once: true },
+    );
+  }
+
   window.addEventListener("keydown", (event) => event.key === "Escape" && closeMenu());
 </script>
