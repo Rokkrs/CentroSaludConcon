@@ -8,8 +8,7 @@ import SectionMarker from "./SectionMarker.astro";
   <div class="container footer-grid">
     <div>
       <a class="brand brand-light" href={withBase()}>
-        <span class="brand-mark" aria-hidden="true">I</span>
-        <span class="brand-copy"><strong>{site.shortName}</strong><small>{site.name}</small></span>
+        <img class="brand-logo" src={withBase("images/iid-logo.png")} alt={site.name} width="390" height="180" />
       </a>
       <p>{site.tagline}</p>
     </div>

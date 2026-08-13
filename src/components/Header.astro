@@ -5,11 +5,7 @@ import { navigation, site, withBase } from "../data/site";
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href={withBase()} aria-label={`${site.name}, ir al inicio`}>
-      <span class="brand-mark" aria-hidden="true">I</span>
-      <span class="brand-copy">
-        <strong>{site.shortName}</strong>
-        <small>{site.name}</small>
-      </span>
+      <img class="brand-logo" src={withBase("images/iid-logo.png")} alt={site.name} width="390" height="180" />
     </a>
 
     <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">

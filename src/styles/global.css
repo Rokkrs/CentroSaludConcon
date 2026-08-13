@@ -50,6 +50,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .site-header { background: rgba(247, 248, 244, .9); border-bottom: 1px solid rgba(16, 59, 69, .07); inset: 0 0 auto; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px); }
 .header-inner { align-items: center; display: flex; height: 78px; justify-content: space-between; }
 .brand { align-items: center; display: inline-flex; gap: 11px; }
+.brand-logo { display: block; height: 52px; object-fit: contain; width: auto; }
 .brand-mark { align-items: center; background: var(--ink); color: var(--white); display: flex; font-family: var(--serif); font-size: 1.9rem; height: 45px; justify-content: center; width: 39px; }
 .brand-copy { display: flex; flex-direction: column; line-height: 1; }
 .brand-copy strong { color: var(--ink); font-family: var(--serif); font-size: 1.55rem; letter-spacing: .06em; }
@@ -204,6 +205,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .brand-light .brand-mark { background: var(--white); color: var(--ink); }
 .brand-light .brand-copy strong { color: var(--white); }
 .brand-light .brand-copy small { color: #93adb1; }
+.footer .brand-logo { background: var(--white); border-radius: 2px; height: 70px; padding: 4px 8px; }
 .footer-grid { display: grid; gap: 80px; grid-template-columns: 1.7fr .6fr .9fr; }
 .footer-grid > div:first-child p { font-family: var(--serif); font-size: 1.1rem; margin-top: 25px; max-width: 300px; }
 .footer h3 { color: var(--white); font-size: .68rem; letter-spacing: .12em; margin-bottom: 22px; text-transform: uppercase; }
@@ -355,6 +357,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .site-header { background: #ffffff; border-bottom-color: var(--line); box-shadow: 0 8px 24px rgba(8,47,57,.1); backdrop-filter: none; isolation: isolate; z-index: 100; }
   .header-inner { background: #ffffff; height: 68px; }
   .brand-mark { height: 40px; width: 35px; }
+  .brand-logo { height: 44px; }
   .brand-copy strong { font-size: 1.35rem; }
   .menu-toggle { display: block; position: relative; z-index: 2; }
   .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
