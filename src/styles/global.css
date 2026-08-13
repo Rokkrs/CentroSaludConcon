@@ -51,6 +51,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .header-inner { align-items: center; display: flex; height: 78px; justify-content: space-between; }
 .brand { align-items: center; display: inline-flex; gap: 11px; }
 .brand-logo { display: block; height: 52px; object-fit: contain; width: auto; }
+.site-header .brand-logo { background: transparent; border: 0; padding: 0; }
 .brand-mark { align-items: center; background: var(--ink); color: var(--white); display: flex; font-family: var(--serif); font-size: 1.9rem; height: 45px; justify-content: center; width: 39px; }
 .brand-copy { display: flex; flex-direction: column; line-height: 1; }
 .brand-copy strong { color: var(--ink); font-family: var(--serif); font-size: 1.55rem; letter-spacing: .06em; }
