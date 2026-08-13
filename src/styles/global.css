@@ -205,7 +205,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .brand-light .brand-mark { background: var(--white); color: var(--ink); }
 .brand-light .brand-copy strong { color: var(--white); }
 .brand-light .brand-copy small { color: #93adb1; }
-.footer .brand-logo { background: var(--white); border-radius: 2px; height: 70px; padding: 4px 8px; }
+.footer .brand-logo { height: 70px; }
 .footer-grid { display: grid; gap: 80px; grid-template-columns: 1.7fr .6fr .9fr; }
 .footer-grid > div:first-child p { font-family: var(--serif); font-size: 1.1rem; margin-top: 25px; max-width: 300px; }
 .footer h3 { color: var(--white); font-size: .68rem; letter-spacing: .12em; margin-bottom: 22px; text-transform: uppercase; }
