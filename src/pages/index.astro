@@ -5,15 +5,13 @@ import { site, withBase } from "../data/site";
 
 <BaseLayout>
   <main class="splash">
-    <div class="splash-card">
-      <img
-        class="splash-logo"
-        src={withBase("images/iid-logo.png")}
-        alt={site.name}
-        width="390"
-        height="180"
-      />
-    </div>
+    <img
+      class="splash-logo"
+      src={withBase("images/iid-logo.png")}
+      alt={site.name}
+      width="390"
+      height="180"
+    />
   </main>
 </BaseLayout>
 
@@ -28,22 +26,17 @@ import { site, withBase } from "../data/site";
     min-height: 100dvh;
     padding: 32px;
   }
-  .splash-card {
-    animation: splash-in 0.9s ease both;
-    background: var(--paper);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-    padding: clamp(28px, 5vw, 52px) clamp(36px, 7vw, 72px);
-  }
   .splash-logo {
-    display: block;
+    animation: splash-in 0.9s ease both;
+    filter: brightness(1.9) saturate(1.15);
     height: auto;
-    width: clamp(200px, 28vw, 340px);
+    width: clamp(220px, 30vw, 360px);
   }
   @keyframes splash-in {
     from { opacity: 0; transform: scale(0.96); }
     to { opacity: 1; transform: none; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .splash-card { animation: none; }
+    .splash-logo { animation: none; }
   }
 </style>
