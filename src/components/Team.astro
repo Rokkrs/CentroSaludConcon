@@ -1,4 +1,5 @@
 ---
+import { site } from "../data/site";
 import { team } from "../data/team";
 import SectionMarker from "./SectionMarker.astro";
 ---
@@ -34,7 +35,7 @@ import SectionMarker from "./SectionMarker.astro";
                 <ul>{member.credentials.map((item) => <li><span aria-hidden="true">✓</span>{item}</li>)}</ul>
               </div>
             )}
-            <a class="team-profile-link" href="#contacto">Consultar con {member.name.split(" ")[1]} <span aria-hidden="true">→</span></a>
+            <a class="team-profile-link" href={site.reservo} target="_blank" rel="noopener noreferrer">Consultar con {member.name.split(" ")[1]} <span aria-hidden="true">→</span></a>
           </div>
         </article>
       ))}
