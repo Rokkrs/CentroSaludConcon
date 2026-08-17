@@ -19,10 +19,12 @@ export const withBase = (path = "") => {
   return `${base}${path.replace(/^\/+/, "")}`;
 };
 
+export const homePath = "preview/";
+
 export const navigation = [
-  { label: "Especialidades", href: withBase("#servicios") },
-  { label: "Equipo", href: withBase("#equipo") },
+  { label: "Especialidades", href: withBase(`${homePath}#servicios`) },
+  { label: "Equipo", href: withBase(`${homePath}#equipo`) },
   { label: "Testimonios", href: withBase("testimonios/") },
-  { label: "Investigación", href: withBase("#trayectoria") },
-  { label: "Contacto", href: withBase("#contacto") },
+  { label: "Investigación", href: withBase(`${homePath}#trayectoria`) },
+  { label: "Contacto", href: withBase(`${homePath}#contacto`) },
 ];

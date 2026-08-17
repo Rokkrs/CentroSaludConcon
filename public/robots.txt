@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /preview/
+Disallow: /testimonios/
 
 Sitemap: https://rokkrs.github.io/CentroSaludConcon/sitemap.xml

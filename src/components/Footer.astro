@@ -1,5 +1,5 @@
 ---
-import { navigation, site, withBase } from "../data/site";
+import { homePath, navigation, site, withBase } from "../data/site";
 import SectionMarker from "./SectionMarker.astro";
 ---
 
@@ -7,7 +7,7 @@ import SectionMarker from "./SectionMarker.astro";
   <SectionMarker number="11" label="Pie de página" light />
   <div class="container footer-grid">
     <div>
-      <a class="brand brand-light" href={withBase()}>
+      <a class="brand brand-light" href={withBase(homePath)}>
         <img class="brand-logo" src={withBase("images/iid-logo.png")} alt={site.name} width="390" height="180" />
       </a>
       <p>{site.tagline}</p>

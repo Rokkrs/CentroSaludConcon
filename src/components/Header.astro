@@ -1,10 +1,10 @@
 ---
-import { navigation, site, withBase } from "../data/site";
+import { homePath, navigation, site, withBase } from "../data/site";
 ---
 
 <header class="site-header" data-header>
   <div class="container header-inner">
-    <a class="brand" href={withBase()} aria-label={`${site.name}, ir al inicio`}>
+    <a class="brand" href={withBase(homePath)} aria-label={`${site.name}, ir al inicio`}>
       <img class="brand-logo" src={withBase("images/iid-logo.png")} alt={site.name} width="390" height="180" />
     </a>
 
