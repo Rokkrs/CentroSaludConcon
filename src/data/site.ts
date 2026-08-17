@@ -8,7 +8,7 @@ export const site = {
   email: "contacto@institutoincluidos.cl",
   instagram: "https://instagram.com/REEMPLAZAR",
   whatsapp: "https://wa.me/56REEMPLAZAR",
-  reservo: "https://reservo.cl/REEMPLAZAR",
+  reservo: "https://agendamiento.reservo.cl/makereserva/agenda/O09DXf40G0dkZg1o7f77F916t0T9Cp",
   address: "Dirección por confirmar · Viña del Mar, Chile",
   maps: "https://maps.google.com/REEMPLAZAR",
   hours: "Lunes a viernes · 09:00 a 19:00",

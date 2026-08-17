@@ -340,7 +340,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .services-grid-assessments { grid-template-columns: repeat(3, 1fr); }
   .international-grid { gap: 45px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
-  .team-card-3 { grid-column: 1 / -1; width: calc(50% - 11px); }
+  .team-card-5 { grid-column: 1 / -1; width: calc(50% - 11px); }
   .research-grid, .cta-grid { gap: 60px; }
   .testimonials-hero-grid, .stories-heading, .testimonial-guidelines-grid, .testimonials-cta-grid { gap: 55px; }
   .comparison-grid { grid-template-columns: repeat(2, 1fr); }
@@ -397,7 +397,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .services-grid-assessments { grid-template-columns: 1fr; }
   .service-card { min-height: 285px; }
   .team-grid { grid-template-columns: 1fr; }
-  .team-card-3 { grid-column: auto; width: auto; }
+  .team-card-5 { grid-column: auto; width: auto; }
   .research-grid { gap: 60px; }
   .process-heading > p { justify-self: start; }
   .steps li { gap: 15px; grid-template-columns: 45px 1fr; }
