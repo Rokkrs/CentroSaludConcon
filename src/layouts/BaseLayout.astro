@@ -61,6 +61,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
       };
       reveal();
       document.addEventListener("astro:page-load", reveal);
+
+      window.addEventListener("keydown", (event) => {
+        const target = event.target as HTMLElement | null;
+        const isEditing = target?.matches("input, textarea, select, [contenteditable='true']");
+        if (isEditing || event.repeat || event.key.toLowerCase() !== "f") return;
+
+        document.documentElement.classList.toggle("hide-section-markers");
+      });
     </script>
   </body>
 </html>

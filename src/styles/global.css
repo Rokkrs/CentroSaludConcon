@@ -57,6 +57,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .content-note { color: var(--muted); font-size: .7rem; margin: 30px 0 0; text-align: center; }
 .section-identified { position: relative; }
 .section-marker { align-items: center; background: #d94f32; border: 4px solid #812b1d; border-radius: 50%; color: var(--white); display: flex; font-family: var(--sans); font-size: .78rem; font-weight: 700; height: 46px; justify-content: center; left: max(12px, calc((100vw - 1180px) / 2 - 64px)); letter-spacing: .03em; position: absolute; top: 24px; width: 46px; z-index: 4; box-shadow: 0 7px 0 rgba(8,47,57,.12), 0 12px 26px rgba(8,47,57,.2); }
+.hide-section-markers .section-marker { opacity: 0; pointer-events: none; visibility: hidden; }
 .section-marker-light { background: #d94f32; border-color: var(--white); color: var(--white); box-shadow: 0 7px 0 rgba(0,0,0,.18), 0 12px 26px rgba(0,0,0,.2); }
 .trust-bar .section-marker, .international .section-marker { top: 50%; transform: translateY(-50%); }
 .hero .section-marker { top: 18px; }
@@ -155,7 +156,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .service-card a { align-items: center; color: var(--white); display: flex; font-size: .75rem; justify-content: space-between; }
 .service-card .cta-icon { color: var(--coral); }
 
-.team { background: var(--white); }
+.team { background: var(--white); padding-bottom: 72px; }
 .team-intro { margin-bottom: 55px; }
 .team-intro h2 { margin: 0; max-width: 1080px; }
 .team-grid { display: grid; gap: 26px; grid-template-columns: repeat(3, 1fr); }
@@ -358,6 +359,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 @media (max-width: 720px) {
   .container { width: min(100% - 30px, 580px); }
   .section { padding: 84px 0; }
+  .team { padding-bottom: 60px; }
   .section-marker { border-width: 3px; font-size: .7rem; height: 40px; left: auto; right: 12px; top: 12px; width: 40px; }
   .trust-bar .section-marker, .international .section-marker { left: auto; right: 8px; top: 8px; transform: none; }
   .hero .section-marker { right: 14px; top: 12px; }
