@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BoxRental from "../components/BoxRental.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout
+  title={`Arrienda tu box | ${site.name}`}
+  description="Consulta disponibilidad y arrienda un box profesional para tu práctica clínica en Viña del Mar."
+>
+  <Header />
+  <main>
+    <BoxRental />
+  </main>
+  <Footer />
+</BaseLayout>

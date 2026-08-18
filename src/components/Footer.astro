@@ -4,7 +4,7 @@ import SectionMarker from "./SectionMarker.astro";
 ---
 
 <footer class="footer section-identified">
-  <SectionMarker number="11" label="Pie de página" light />
+  <SectionMarker number="10" label="Pie de página" light />
   <div class="container footer-grid">
     <div>
       <a class="brand brand-light" href={withBase(homePath)}>
@@ -15,5 +15,11 @@ import SectionMarker from "./SectionMarker.astro";
     <div><h3>Explora</h3><nav aria-label="Navegación de pie">{navigation.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</nav></div>
     <div><h3>Contacto</h3><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">{site.phone}</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
   </div>
-  <div class="container footer-bottom"><span>© 2026 {site.name}. Todos los derechos reservados.</span><a href="#">Política de privacidad</a></div>
+  <div class="container footer-bottom">
+    <span>© 2026 {site.name}. Todos los derechos reservados.</span>
+    <div class="footer-bottom-links">
+      <a href={withBase("arriendo-box/")}>Arrienda tu box</a>
+      <a href="#">Política de privacidad</a>
+    </div>
+  </div>
 </footer>
