@@ -3,4 +3,4 @@ Allow: /
 Disallow: /preview/
 Disallow: /testimonios/
 
-Sitemap: https://rokkrs.github.io/CentroSaludConcon/sitemap.xml
+Sitemap: https://incluidosporderecho.cl/sitemap.xml
