@@ -22,6 +22,6 @@ const groups = [
         <div class="container category-testimonial-layout"><div class="category-testimonial-heading"><span>0{groupIndex + 1}</span><h2>{group.title}</h2><p>{group.items.length} experiencias en esta categoría.</p></div><div class="category-cards-grid">{group.items.map((item) => <TestimonialCard {...item} />)}</div></div>
       </section>
     ))}
-    <section class="simple-testimonials-footer"><div class="container"><p>Las categorías serán útiles cuando exista un volumen mayor de testimonios validados.</p><a class="button" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a></div></section>
+    <section class="simple-testimonials-footer"><div class="container"><p>Las categorías serán útiles cuando exista un volumen mayor de testimonios validados.</p><a class="button button-reserve" href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agenda tu evaluación</span></a></div></section>
   </main><Footer />
 </BaseLayout>

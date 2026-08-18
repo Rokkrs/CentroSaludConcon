@@ -13,6 +13,6 @@ import { allTestimonials } from "../../data/testimonials";
   <main class="simple-testimonials">
     <section class="simple-testimonials-hero"><div class="container"><p class="eyebrow"><span></span> Versión 01 · Recomendada</p><h1>Experiencias de personas <em>y familias.</em></h1><p>Historias breves que ayudan a conocer cómo se vive un proceso de evaluación y acompañamiento con nuestro equipo.</p></div></section>
     <section class="simple-testimonials-body"><div class="container simple-cards-grid">{allTestimonials.map((item) => <TestimonialCard {...item} />)}</div></section>
-    <section class="simple-testimonials-footer"><div class="container"><p>Todos los testimonios requieren autorización y revisión antes de publicarse.</p><a class="button" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a></div></section>
+    <section class="simple-testimonials-footer"><div class="container"><p>Todos los testimonios requieren autorización y revisión antes de publicarse.</p><a class="button button-reserve" href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agenda tu evaluación</span></a></div></section>
   </main><Footer />
 </BaseLayout>

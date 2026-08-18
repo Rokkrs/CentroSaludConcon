@@ -25,9 +25,16 @@ const assessments = services.filter((service) => service.category === "assessmen
       <div class="services-grid services-grid-clinical">
         {clinicalServices.map((service) => (
           <article class="service-card" data-reveal>
-            <span class="service-number">{service.number}</span>
-            <div><h3>{service.title}</h3><p>{service.description}</p></div>
-            <a href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>Agendar atención <span aria-hidden="true">↗</span></a>
+            <div class="service-card-content">
+              <span class="service-number">{service.number}</span>
+              <div class="service-card-copy"><h3>{service.title}</h3><p>{service.description}</p></div>
+              <a class="cta-link" href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>
+                <span class="cta-label">Agendar atención</span>
+                <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+                  <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                </svg>
+              </a>
+            </div>
           </article>
         ))}
       </div>
@@ -40,9 +47,16 @@ const assessments = services.filter((service) => service.category === "assessmen
       <div class="services-grid services-grid-assessments">
         {assessments.map((service) => (
           <article class="service-card service-card-assessment" data-reveal>
-            <span class="service-number">{service.number}</span>
-            <div><h3>{service.title}</h3><p>{service.description}</p></div>
-            <a href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>Agendar evaluación <span aria-hidden="true">↗</span></a>
+            <div class="service-card-content">
+              <span class="service-number">{service.number}</span>
+              <div class="service-card-copy"><h3>{service.title}</h3><p>{service.description}</p></div>
+              <a class="cta-link" href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>
+                <span class="cta-label">Agendar evaluación</span>
+                <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+                  <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                </svg>
+              </a>
+            </div>
           </article>
         ))}
       </div>

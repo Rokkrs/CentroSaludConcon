@@ -1,0 +1,57 @@
+---
+import SectionMarker from "./SectionMarker.astro";
+
+const bookingUrl = "https://agendamiento.reservo.cl/makereserva/agenda/T0O8zLZ0d0ivjT5g7t47y5j6u3V9Fv";
+---
+
+<section id="arriendo-box" class="section box-rental section-identified" aria-labelledby="box-rental-title">
+  <SectionMarker number="08" label="Arriendo de box" />
+  <div class="container box-rental-grid">
+    <div class="box-rental-copy" data-reveal>
+      <p class="eyebrow"><span></span> Para profesionales</p>
+      <h2 id="box-rental-title">Un espacio profesional para <em>tu práctica clínica.</em></h2>
+    </div>
+
+    <div class="box-rental-action" data-reveal>
+      <a class="button button-reserve" href={bookingUrl} target="_blank" rel="noopener noreferrer">
+        <span>Ver disponibilidad y arrendar</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .box-rental {
+    background: var(--paper);
+  }
+
+  .box-rental-grid {
+    align-items: end;
+    display: grid;
+    gap: 80px;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .box-rental-copy h2 {
+    margin: 0;
+    max-width: 900px;
+  }
+
+  .box-rental-action {
+    padding-bottom: 6px;
+  }
+
+  @media (max-width: 920px) {
+    .box-rental-grid {
+      align-items: start;
+      gap: 32px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .box-rental-action .button {
+      width: 100%;
+    }
+  }
+</style>

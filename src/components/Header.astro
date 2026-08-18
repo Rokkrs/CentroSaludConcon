@@ -14,7 +14,7 @@ import { homePath, navigation, site, withBase } from "../data/site";
 
     <nav id="main-menu" class="main-nav" aria-label="Navegación principal">
       {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
-      <a class="button button-small" href={site.reservo} target="_blank" rel="noopener noreferrer">Agenda tu evaluación <span aria-hidden="true">↗</span></a>
+      <a class="button button-small button-reserve" href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agenda tu evaluación</span></a>
     </nav>
   </div>
 </header>
