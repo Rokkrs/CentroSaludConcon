@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import TrustBar from "../components/TrustBar.astro";
+import International from "../components/International.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Team from "../components/Team.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+
+const title = `Centro de Neurodivergencia en Viña del Mar | ${site.name}`;
+const description = "Centro especializado en neurodivergencia en Viña del Mar, con atención presencial y online para todo Chile. Evaluación e intervención para niños, adolescentes y adultos.";
+---
+
+<BaseLayout title={title} description={description} noindex>
+  <Header />
+  <Hero />
+  <TrustBar />
+  <International />
+  <Team number="04" />
+  <About />
+  <Services number="06" />
+  <FAQ />
+  <Footer />
+</BaseLayout>

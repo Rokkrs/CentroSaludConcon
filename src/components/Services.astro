@@ -3,12 +3,18 @@ import { services } from "../data/services";
 import { site } from "../data/site";
 import SectionMarker from "./SectionMarker.astro";
 
+interface Props {
+  number?: string;
+}
+
+const { number = "04" } = Astro.props;
+
 const clinicalServices = services.filter((service) => service.category === "clinical");
 const assessments = services.filter((service) => service.category === "assessment");
 ---
 
 <section id="servicios" class="section services section-identified" aria-labelledby="services-title">
-  <SectionMarker number="04" label="Especialidades" light />
+  <SectionMarker number={number} label="Especialidades" light />
   <div class="container">
     <div class="section-heading" data-reveal>
       <div>
