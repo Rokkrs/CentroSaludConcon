@@ -5,13 +5,18 @@ import { site, withBase } from "../data/site";
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
   title = `${site.name} | Atención profesional especializada`,
   description = site.description,
+  noindex = false,
+  structuredData,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const socialImage = new URL(withBase("images/reference/client-reference.jpeg"), Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -20,6 +25,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content="#0c3f4c" />
     <link rel="icon" type="image/png" href={withBase("favicon.png")} />
     <link rel="canonical" href={canonical} />
@@ -28,7 +34,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Atención especializada en neurodivergencia de Instituto Incluidos" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <title>{title}</title>
   </head>
   <body>

@@ -1,30 +1,30 @@
 export const faq = [
   {
-    question: "¿Qué modalidades de atención ofrecen?",
-    answer: "Atendemos tanto de forma online como presencial, según la especialidad y la disponibilidad del profesional.",
+    question: "¿Atienden online en todo Chile?",
+    answer: "Sí. Ofrecemos atención online para personas y familias de todo Chile, según la especialidad y la pertinencia clínica de cada atención.",
   },
   {
-    question: "¿Cuál es el horario de atención?",
-    answer: "Lunes a viernes de 09:00 a 19:00 horas.",
+    question: "¿Dónde está ubicado el centro?",
+    answer: "Nuestro centro realiza atención presencial en Viña del Mar, Región de Valparaíso, además de atención online para otras regiones de Chile.",
   },
   {
-    question: "¿Dónde están ubicados?",
-    answer: "Nuestro centro está en Viña del Mar, Chile. Podés ver la dirección exacta y cómo llegar en la sección de contacto.",
+    question: "¿Qué especialidades trabajan con neurodivergencia?",
+    answer: "Contamos con atención en psiquiatría, psicología, terapia ocupacional y fonoaudiología, junto con evaluaciones especializadas como ADOS-2, WISC-V y perfil sensorial.",
   },
   {
     question: "¿Para qué edades atienden?",
     answer: "Trabajamos con niños, adolescentes y adultos, con evaluación e intervención adaptada a cada etapa.",
   },
   {
-    question: "¿Necesito un diagnóstico previo para agendar una hora?",
-    answer: "[A confirmar con la clienta] No es requisito: nuestro equipo puede orientar el proceso de evaluación y diagnóstico desde la primera consulta.",
+    question: "¿Realizan evaluación ADOS-2?",
+    answer: "Sí. La evaluación ADOS-2 forma parte de nuestras evaluaciones especializadas para apoyar el proceso diagnóstico relacionado con el espectro autista.",
   },
   {
-    question: "¿Cómo agendo una hora?",
-    answer: "Podés reservar directamente online a través de nuestro sistema de agendamiento, o escribirnos por WhatsApp si tenés dudas antes de agendar.",
+    question: "¿Realizan evaluación WISC-V?",
+    answer: "Sí. Realizamos evaluación cognitiva WISC-V para niños y adolescentes dentro de nuestros procesos de evaluación especializada.",
   },
   {
-    question: "¿Trabajan con convenios de isapre o seguros?",
-    answer: "[A confirmar con la clienta] Contáctanos por WhatsApp o correo para conocer las opciones de convenio y reembolso disponibles.",
+    question: "¿Cómo puedo saber qué atención necesito?",
+    answer: "Puedes revisar nuestras especialidades y evaluaciones disponibles. Si todavía tienes dudas, nuestro equipo puede orientarte antes de realizar la reserva.",
   },
 ];

@@ -3,7 +3,7 @@ export const site = {
   shortName: "IID",
   tagline: "Ciencia, investigación, derechos e inclusión.",
   description:
-    "Centro de referencia en neurodivergencia, evaluación, diagnóstico e intervención interdisciplinaria basada en evidencia.",
+    "Centro especializado en neurodivergencia en Viña del Mar, con atención presencial y online para niños, adolescentes y adultos de todo Chile.",
   phone: "+56 9 1234 5678",
   email: "contacto@institutoincluidos.cl",
   instagram: "https://instagram.com/REEMPLAZAR",

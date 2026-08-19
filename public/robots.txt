@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /preview/
-Disallow: /testimonios/
 
 Sitemap: https://incluidosporderecho.cl/sitemap.xml

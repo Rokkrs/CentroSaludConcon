@@ -10,9 +10,57 @@ import Team from "../components/Team.astro";
 import FinalCTA from "../components/FinalCTA.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
+import { faq } from "../data/faq";
+import { services } from "../data/services";
+import { site, withBase } from "../data/site";
+
+const title = `Centro de Neurodivergencia en Viña del Mar | ${site.name}`;
+const description = "Centro especializado en neurodivergencia en Viña del Mar, con atención presencial y online para todo Chile. Evaluación e intervención para niños, adolescentes y adultos.";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalClinic",
+      "@id": "https://incluidosporderecho.cl/preview/#centro",
+      name: site.name,
+      alternateName: site.shortName,
+      url: "https://incluidosporderecho.cl/preview/",
+      logo: `https://incluidosporderecho.cl/${withBase("images/iid-logo.png").replace(/^\//, "")}`,
+      description,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Viña del Mar",
+        addressRegion: "Valparaíso",
+        addressCountry: "CL",
+      },
+      areaServed: [
+        { "@type": "City", name: "Viña del Mar" },
+        { "@type": "Country", name: "Chile" },
+      ],
+      availableService: services.map((service) => ({
+        "@type": service.category === "assessment" ? "MedicalTest" : "MedicalTherapy",
+        name: service.title,
+        description: service.description,
+      })),
+      potentialAction: {
+        "@type": "ReserveAction",
+        target: site.reservo,
+        name: "Agendar una evaluación",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    },
+  ],
+};
 ---
 
-<BaseLayout>
+<BaseLayout title={title} description={description} structuredData={structuredData}>
   <Header />
   <Hero />
   <TrustBar />
