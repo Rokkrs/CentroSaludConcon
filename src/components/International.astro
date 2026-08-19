@@ -9,9 +9,10 @@ const partners = [
 ];
 ---
 
-<section class="international section-identified" aria-label="Compromiso internacional">
+<section class="international section-identified" aria-labelledby="international-title">
   <SectionMarker number="03" label="Compromiso internacional" />
   <div class="container international-grid" data-reveal>
+    <p id="international-title" class="international-label">Vinculados a iniciativas internacionales</p>
     <ul class="partner-row" aria-label="Instituciones internacionales vinculadas">
       {partners.map((partner) => (
         <li>
