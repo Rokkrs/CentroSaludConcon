@@ -1,31 +1,25 @@
 ---
 import SectionMarker from "./SectionMarker.astro";
+import { withBase } from "../data/site";
 
-const initiatives = [
-  { acronym: "ION", name: "Institute of Neurodiversity" },
-  { acronym: "GNA", name: "Global Neurodiversity Association" },
-  { acronym: "AutismCRC", name: "Cooperative Research Centre" },
+const partners = [
+  { name: "Institute of Neurodiversity", logo: "images/partners/ion-logo.png", url: "https://ioneurodiversity.org/" },
+  { name: "Global Neurodiversity Association", logo: "images/partners/gna-logo.svg", url: "https://gnaglobal.org/" },
+  { name: "Autism CRC", logo: "images/partners/autismcrc-logo.svg", url: "https://www.autismcrc.com.au/" },
 ];
 ---
 
-<section class="international section-identified" aria-labelledby="international-title">
+<section class="international section-identified" aria-label="Compromiso internacional">
   <SectionMarker number="03" label="Compromiso internacional" />
   <div class="container international-grid" data-reveal>
-    <div class="international-copy">
-      <span class="globe" aria-hidden="true">◎</span>
-      <div>
-        <p class="eyebrow"><span></span> Compromiso internacional</p>
-        <h2 id="international-title">Conectados con el conocimiento que impulsa la neurodiversidad.</h2>
-        <p>Vinculación con iniciativas internacionales para promover la inclusión y los derechos de las personas neurodivergentes.</p>
-      </div>
-    </div>
-    <div class="initiatives" aria-label="Iniciativas internacionales vinculadas">
-      <p>Vinculados a iniciativas internacionales</p>
-      <div>
-        {initiatives.map((item) => (
-          <article><strong>{item.acronym}</strong><span>{item.name}</span></article>
-        ))}
-      </div>
-    </div>
+    <ul class="partner-row" aria-label="Instituciones internacionales vinculadas">
+      {partners.map((partner) => (
+        <li>
+          <a href={partner.url} target="_blank" rel="noopener noreferrer">
+            <img src={withBase(partner.logo)} alt={partner.name} loading="lazy" />
+          </a>
+        </li>
+      ))}
+    </ul>
   </div>
 </section>

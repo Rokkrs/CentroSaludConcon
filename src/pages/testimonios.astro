@@ -2,58 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { withBase } from "../data/site";
+import TestimonialCard from "../components/TestimonialCard.astro";
 import { site } from "../data/site";
-
-const options = [
-  {
-    number: "01",
-    title: "Grilla de cards",
-    description: "La alternativa más simple, flexible y económica de mantener.",
-    strengths: ["Agrega testimonios fácilmente", "Excelente en celular", "Sin filtros ni jerarquías manuales"],
-    href: withBase("testimonios/cards/"),
-    recommendation: true,
-  },
-  {
-    number: "02",
-    title: "Destacado + cards",
-    description: "Una historia principal genera más impacto emocional y el resto mantiene un formato sencillo.",
-    strengths: ["Mayor impacto editorial", "Permite destacar un video", "Requiere elegir la historia principal"],
-    href: withBase("testimonios/destacado/"),
-  },
-  {
-    number: "03",
-    title: "Por categorías",
-    description: "Organiza las experiencias por tipo de atención cuando existe un volumen mayor de contenido.",
-    strengths: ["Facilita explorar por interés", "Escala a muchos testimonios", "Mayor mantenimiento"],
-    href: withBase("testimonios/categorias/"),
-  },
-];
+import { allTestimonials } from "../data/testimonials";
+const [featured, ...rest] = allTestimonials;
 ---
 
-<BaseLayout title={`Comparar testimonios | ${site.name}`} description="Tres alternativas para la página de testimonios de Instituto Incluidos.">
+<BaseLayout title={`Testimonios | ${site.name}`} description="Experiencias reales de personas y familias que han vivido un proceso de evaluación y acompañamiento con nuestro equipo.">
   <Header />
-  <main class="comparison-page">
-    <section class="comparison-hero">
-      <div class="container comparison-hero-inner">
-        <p class="eyebrow"><span></span> Comparación de propuestas</p>
-        <h1>Tres formas de presentar <em>experiencias reales.</em></h1>
-        <p>El contenido es el mismo en las tres versiones. Compara cuál comunica mejor y cuál será más fácil de mantener.</p>
-      </div>
-    </section>
-    <section class="comparison-options">
-      <div class="container comparison-grid">
-        {options.map((option) => (
-          <article class="comparison-card">
-            <div class="comparison-card-top"><span>{option.number}</span>{option.recommendation && <strong>Recomendada</strong>}</div>
-            <h2>{option.title}</h2>
-            <p>{option.description}</p>
-            <ul>{option.strengths.map((item) => <li>✓ {item}</li>)}</ul>
-            <a class="button" href={option.href}>Ver versión {option.number} <span aria-hidden="true">→</span></a>
-          </article>
-        ))}
-      </div>
-    </section>
-  </main>
-  <Footer />
+  <main class="simple-testimonials featured-version">
+    <section class="simple-testimonials-hero"><div class="container"><p class="eyebrow"><span></span> Testimonios</p><h1>Una historia central. <em>Otras voces que la acompañan</em></h1></div></section>
+    <section class="featured-testimonial-layout"><div class="container featured-testimonial-inner"><TestimonialCard {...featured} featured /><div class="featured-video"><span aria-hidden="true">▶</span><strong>Video testimonial</strong><small>Contenido futuro opcional</small></div></div></section>
+    <section class="simple-testimonials-body"><div class="container simple-cards-grid compact-cards-grid">{rest.map((item) => <TestimonialCard {...item} />)}</div></section>
+    <section class="simple-testimonials-footer"><div class="container"><p>Una experiencia destacada requiere selección editorial y consentimiento específico.</p><a class="button button-reserve" href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agenda tu evaluación</span></a></div></section>
+  </main><Footer />
 </BaseLayout>

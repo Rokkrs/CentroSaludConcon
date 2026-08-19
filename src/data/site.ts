@@ -9,6 +9,7 @@ export const site = {
   instagram: "https://instagram.com/REEMPLAZAR",
   whatsapp: "https://wa.me/56REEMPLAZAR",
   reservo: "https://agendamiento.reservo.cl/makereserva/agenda/O09DXf40G0dkZg1o7f77F916t0T9Cp",
+  boxReservo: "https://agendamiento.reservo.cl/makereserva/agenda/T0O8zLZ0d0ivjT5g7t47y5j6u3V9Fv",
   address: "Dirección por confirmar · Viña del Mar, Chile",
   maps: "https://maps.google.com/REEMPLAZAR",
   hours: "Lunes a viernes · 09:00 a 19:00",

@@ -3,22 +3,33 @@ import { homePath, navigation, site, withBase } from "../data/site";
 import SectionMarker from "./SectionMarker.astro";
 ---
 
-<footer class="footer section-identified">
-  <SectionMarker number="10" label="Pie de página" light />
+<footer id="contacto" class="footer section-identified">
+  <SectionMarker number="09" label="Contacto" light />
   <div class="container footer-grid">
     <div>
       <a class="brand brand-light" href={withBase(homePath)}>
         <img class="brand-logo" src={withBase("images/iid-logo.png")} alt={site.name} width="390" height="180" />
       </a>
       <p>{site.tagline}</p>
+      <a class="footer-social" href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a>
     </div>
     <div><h3>Explora</h3><nav aria-label="Navegación de pie">{navigation.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</nav></div>
-    <div><h3>Contacto</h3><a href={`mailto:${site.email}`}>{site.email}</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer">{site.phone}</a><a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
+    <div class="footer-contact">
+      <h3>Contacto</h3>
+      <a class="button button-reserve footer-whatsapp" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+        <span>Escribir por WhatsApp</span>
+      </a>
+      <dl>
+        <div><dt>Correo</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+        <div><dt>Ubicación</dt><dd>{site.address}<br /><a href={site.maps} target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></dd></div>
+        <div><dt>Horario</dt><dd>{site.hours}</dd></div>
+      </dl>
+    </div>
   </div>
   <div class="container footer-bottom">
     <span>© 2026 {site.name}. Todos los derechos reservados.</span>
     <div class="footer-bottom-links">
-      <a href={withBase("arriendo-box/")}>Arrienda tu box</a>
+      <a href={site.boxReservo} target="_blank" rel="noopener noreferrer">Arrienda tu box</a>
       <a href="#">Política de privacidad</a>
     </div>
   </div>

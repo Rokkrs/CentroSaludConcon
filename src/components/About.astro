@@ -1,4 +1,5 @@
 ---
+import { achievements } from "../data/achievements";
 import SectionMarker from "./SectionMarker.astro";
 
 const attributes = [
@@ -14,7 +15,7 @@ const attributes = [
   <div class="container split-layout">
     <div data-reveal>
       <p class="eyebrow"><span></span> Quiénes somos</p>
-      <h2 id="about-title">Conocimiento que orienta.<br /><em>Cercanía que acompaña.</em></h2>
+      <h2 id="about-title">Conocimiento que orienta<br /><em>Cercanía que acompaña</em></h2>
     </div>
     <div class="about-copy" data-reveal>
       <p class="large-copy">Creemos en una atención donde la evidencia y la empatía no compiten: se complementan.</p>
@@ -22,6 +23,17 @@ const attributes = [
       <ul class="check-list">
         {attributes.map((attribute) => <li><span aria-hidden="true">✓</span>{attribute}</li>)}
       </ul>
+    </div>
+  </div>
+  <div id="trayectoria" class="container research-strip" data-reveal>
+    <p class="eyebrow"><span></span> Investigación y trayectoria</p>
+    <div class="achievement-grid">
+      {achievements.map((item, index) => (
+        <article>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <div><h3>{item.title}</h3><p>{item.text}</p></div>
+        </article>
+      ))}
     </div>
   </div>
 </section>

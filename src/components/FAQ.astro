@@ -1,0 +1,23 @@
+---
+import { faq } from "../data/faq";
+import SectionMarker from "./SectionMarker.astro";
+---
+
+<section id="preguntas-frecuentes" class="section faq section-identified" aria-labelledby="faq-title">
+  <SectionMarker number="08" label="Preguntas frecuentes" />
+  <div class="container split-layout faq-layout">
+    <div class="faq-intro" data-reveal>
+      <p class="eyebrow"><span></span> Preguntas frecuentes</p>
+      <h2 id="faq-title">Resolvemos tus <em>dudas más comunes</em></h2>
+      <p>¿No encontraste lo que buscabas? Más abajo dejamos todos nuestros datos de contacto.</p>
+    </div>
+    <div class="faq-list" data-reveal>
+      {faq.map((item) => (
+        <details class="faq-item">
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

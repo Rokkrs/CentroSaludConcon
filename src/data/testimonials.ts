@@ -3,6 +3,7 @@ export const featuredTestimonial = {
     "IID cambió nuestras vidas. Nos sentimos escuchados, comprendidos y acompañados en cada paso del proceso.",
   author: "Familia R.",
   context: "Experiencia familiar",
+  rating: 5,
 };
 
 export const testimonialPlaceholders = [
@@ -14,6 +15,7 @@ export const testimonialPlaceholders = [
     title: "Comprender para tomar mejores decisiones",
     description:
       "Espacio reservado para una experiencia validada sobre el proceso de evaluación y la claridad de sus resultados.",
+    rating: 5,
   },
   {
     quote:
@@ -23,6 +25,7 @@ export const testimonialPlaceholders = [
     title: "Una atención donde la persona se siente escuchada",
     description:
       "Espacio reservado para un testimonio autorizado sobre el vínculo con el equipo profesional.",
+    rating: 5,
   },
   {
     quote:
@@ -32,6 +35,7 @@ export const testimonialPlaceholders = [
     title: "Herramientas para acompañar con más confianza",
     description:
       "Espacio reservado para relatar cómo la orientación recibida se traduce en la vida cotidiana.",
+    rating: 5,
   },
   {
     quote:
@@ -40,6 +44,7 @@ export const testimonialPlaceholders = [
     context: "Atención online",
     title: "Especialización accesible desde otras regiones",
     description: "Espacio reservado para una experiencia autorizada sobre atención remota.",
+    rating: 5,
   },
   {
     quote:
@@ -48,6 +53,7 @@ export const testimonialPlaceholders = [
     context: "Evaluación cognitiva",
     title: "Resultados comprensibles y útiles",
     description: "Espacio reservado para una experiencia validada sobre devolución de resultados.",
+    rating: 5,
   },
 ];
 

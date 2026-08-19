@@ -18,7 +18,7 @@ export const services = [
     category: "clinical",
     title: "Terapia ocupacional",
     description:
-      "Acompañamiento para favorecer la autonomía en actividades significativas de la vida diaria.",
+      "Acompañamiento para favorecer la autonomía y participación en actividades significativas de la vida diaria.",
   },
   {
     number: "04",
@@ -32,7 +32,7 @@ export const services = [
     category: "assessment",
     title: "Evaluación WISC-V",
     description:
-      "Evaluación cognitiva completa para niños, adolescentes y adultos.",
+      "Evaluación cognitiva completa para niños y adolescentes.",
   },
   {
     number: "06",
@@ -44,8 +44,8 @@ export const services = [
   {
     number: "07",
     category: "assessment",
-    title: "Evaluación cognitiva",
+    title: "Perfil sensorial",
     description:
-      "Evaluación de funciones cognitivas para orientar intervenciones efectivas.",
+      "Evaluación estandarizada de sistemas sensoriales, umbral neurológico y estrategias de autorregulación.",
   },
 ];

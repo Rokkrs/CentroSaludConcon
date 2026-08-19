@@ -1,19 +1,30 @@
 ---
 import SectionMarker from "./SectionMarker.astro";
+import { site } from "../data/site";
 
 const items = [
-  ["4.500+", "Evaluaciones clínicas"],
-  ["15", "Regiones de Chile atendidas"],
-  ["Nacional", "Atención nacional e internacional"],
-  ["Híbrida", "Atención presencial y online"],
+  { value: "4.500+", label: "Evaluaciones y atenciones", stat: true },
+  { value: "15", label: "Regiones de Chile atendidas", stat: true },
+  { value: "Experiencia clínica", label: "Atención nacional e internacional", stat: false },
+  { value: "Online y presencial", label: "Atención en ambas modalidades", stat: false, href: site.reservo },
 ];
 ---
 
 <section class="trust-bar section-identified" aria-label="Nuestros pilares">
   <SectionMarker number="02" label="Indicadores de confianza" />
   <div class="container trust-grid">
-    {items.map(([number, label]) => (
-      <div class="trust-item"><span>{number}</span><p>{label}</p></div>
-    ))}
+    {items.map((item) =>
+      item.href ? (
+        <a class="trust-item trust-item-link" href={item.href} target="_blank" rel="noopener noreferrer" aria-label={`${item.value}: agenda tu evaluación`}>
+          <span class={item.stat ? "trust-number" : "trust-claim"}>{item.value}</span>
+          <p>{item.label}</p>
+        </a>
+      ) : (
+        <div class="trust-item">
+          <span class={item.stat ? "trust-number" : "trust-claim"}>{item.value}</span>
+          <p>{item.label}</p>
+        </div>
+      ),
+    )}
   </div>
 </section>
