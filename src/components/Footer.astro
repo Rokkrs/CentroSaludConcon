@@ -11,14 +11,27 @@ import SectionMarker from "./SectionMarker.astro";
         <img class="brand-logo" src={withBase("images/iid-logo.png")} alt={site.name} width="390" height="180" />
       </a>
       <p>{site.tagline}</p>
-      <a class="footer-social" href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a>
     </div>
     <div><h3>Explora</h3><nav aria-label="Navegación de pie">{navigation.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</nav></div>
     <div class="footer-contact">
       <h3>Contacto</h3>
-      <a class="button button-reserve footer-whatsapp" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
-        <span>Escribir por WhatsApp</span>
-      </a>
+      <div class="footer-contact-links">
+        <a class="footer-contact-link cta-link" href={site.whatsapp} target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.45L3 20.5l1.3-4.74A8.5 8.5 0 1 1 20.5 11.7Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" />
+            <path d="M8.2 7.8c.2-.45.4-.46.72-.47h.6c.18 0 .38.07.47.32l.72 1.74c.08.2.05.4-.08.57l-.55.7c-.14.17-.11.34-.02.5.55 1 1.35 1.8 2.33 2.36.17.1.34.11.5-.04l.8-.94c.16-.18.36-.2.56-.12l1.66.78c.24.11.4.19.43.31.04.13.04.73-.17 1.35-.22.62-1.25 1.18-1.74 1.25-.45.06-1.02.09-1.64-.1-.38-.12-.86-.28-1.48-.55a11.1 11.1 0 0 1-4.2-3.7c-.42-.57-1.12-1.52-1.12-2.9 0-1.39.72-2.07 1-2.35Z" fill="currentColor" />
+          </svg>
+          <span class="cta-label">Escribir por WhatsApp</span>
+        </a>
+        <a class="footer-contact-link cta-link" href={site.instagram} target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7" />
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7" />
+            <circle cx="17.4" cy="6.7" r="1" fill="currentColor" />
+          </svg>
+          <span class="cta-label">Instagram</span>
+        </a>
+      </div>
       <dl>
         <div><dt>Correo</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
         <div><dt>Ubicación</dt><dd>{site.address}<br /><a href={site.maps} target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></dd></div>

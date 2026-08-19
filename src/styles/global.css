@@ -49,6 +49,10 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .button-small.button-reserve > span { padding: .78em 1.08em; }
 .button-large.button-reserve { font-size: 1rem; }
 .button-large.button-reserve > span { padding: 1.15em 1.9em; }
+.button-reserve.button-box-rental { background: linear-gradient(90deg, var(--ink), var(--ink-soft)); }
+.button-reserve.button-box-rental::before { background: var(--ink); }
+.button-reserve.button-box-rental:hover { background: linear-gradient(90deg, var(--ink), var(--ink-soft)); }
+.button-reserve.button-box-rental:focus-visible { outline-color: rgba(29,118,134,.35); }
 .text-link { align-items: center; display: inline-flex; font-size: .9rem; font-weight: 600; gap: 18px; padding: 14px 0 8px; }
 .cta-link .cta-label { padding-bottom: 4px; position: relative; }
 .cta-link .cta-label::after { background: currentColor; bottom: 0; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: bottom right; transition: transform .25s ease-out; width: 100%; }
@@ -221,8 +225,11 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .footer nav { gap: 8px; }
 .footer-grid a { font-size: .78rem; margin-bottom: 8px; }
 .footer-grid a:hover { color: var(--white); }
-.footer-social { margin-top: 20px; width: fit-content; }
-.footer-whatsapp { margin-bottom: 22px; width: fit-content; }
+.footer-contact-links { align-items: flex-start; display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+.footer-contact-link { align-items: center; color: #b8ced0; display: inline-flex; gap: 11px; margin: 0 !important; width: fit-content; }
+.footer-contact-link svg { flex: 0 0 auto; height: 20px; width: 20px; }
+.footer-contact-link .cta-label { padding-bottom: 3px; }
+.footer-contact-link:hover { color: var(--white); }
 .footer-contact dl { margin: 0; }
 .footer-contact dl > div { border-top: 1px solid rgba(255,255,255,.1); display: grid; gap: 8px 24px; grid-template-columns: 100px 1fr; padding: 14px 0; }
 .footer-contact dt { color: #6f9095; font-size: .62rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
