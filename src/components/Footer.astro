@@ -12,7 +12,7 @@ import SectionMarker from "./SectionMarker.astro";
       </a>
       <p>{site.tagline}</p>
     </div>
-    <div><h3>Explora</h3><nav aria-label="Navegación de pie">{navigation.slice(0, 4).map((item) => <a href={item.href}>{item.label}</a>)}</nav></div>
+    <div><h3>Explora</h3><nav aria-label="Navegación de pie">{navigation.slice(0, 4).map((item) => <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noopener noreferrer" : undefined}>{item.label}</a>)}</nav></div>
     <div class="footer-contact">
       <h3>Contacto</h3>
       <div class="footer-contact-links">
@@ -42,7 +42,6 @@ import SectionMarker from "./SectionMarker.astro";
   <div class="container footer-bottom">
     <span>© 2026 {site.name}. Todos los derechos reservados.</span>
     <div class="footer-bottom-links">
-      <a href={site.boxReservo} target="_blank" rel="noopener noreferrer">Arrienda tu box</a>
       <a href="#">Política de privacidad</a>
     </div>
   </div>

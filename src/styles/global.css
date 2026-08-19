@@ -49,10 +49,6 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .button-small.button-reserve > span { padding: .78em 1.08em; }
 .button-large.button-reserve { font-size: 1rem; }
 .button-large.button-reserve > span { padding: 1.15em 1.9em; }
-.button-reserve.button-box-rental { background: linear-gradient(90deg, var(--ink), var(--ink-soft)); }
-.button-reserve.button-box-rental::before { background: var(--ink); }
-.button-reserve.button-box-rental:hover { background: linear-gradient(90deg, var(--ink), var(--ink-soft)); }
-.button-reserve.button-box-rental:focus-visible { outline-color: rgba(29,118,134,.35); }
 .text-link { align-items: center; display: inline-flex; font-size: .9rem; font-weight: 600; gap: 18px; padding: 14px 0 8px; }
 .cta-link .cta-label { padding-bottom: 4px; position: relative; }
 .cta-link .cta-label::after { background: currentColor; bottom: 0; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: bottom right; transition: transform .25s ease-out; width: 100%; }
@@ -188,11 +184,6 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .achievement-grid h3 { color: var(--ink); font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 6px; }
 .achievement-grid p { color: var(--muted); font-size: .78rem; margin: 0; }
 
-.box-rental-strip { background: var(--mist); border-bottom: 1px solid #cfdfdd; border-top: 1px solid #cfdfdd; padding: 42px 0; }
-.box-rental-strip-inner { align-items: center; display: grid; gap: 52px; grid-template-columns: 1.15fr 1fr auto; }
-.box-rental-heading .eyebrow { margin-bottom: 9px; }
-.box-rental-heading h2 { font-size: clamp(1.65rem, 2.3vw, 2.35rem); margin: 0; }
-.box-rental-strip-inner > p { color: var(--muted); font-size: .84rem; line-height: 1.55; margin: 0; max-width: 380px; }
 
 .faq { padding: 80px 0; }
 .faq-intro h2 { font-size: clamp(1.9rem, 2.6vw, 2.5rem); }
@@ -388,9 +379,6 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .team-card-5 { grid-column: auto; width: auto; }
   .research-strip { margin-top: 36px; padding-top: 26px; }
   .achievement-grid { grid-template-columns: 1fr; }
-  .box-rental-strip { padding: 38px 0; }
-  .box-rental-strip-inner { align-items: flex-start; gap: 20px; grid-template-columns: 1fr; }
-  .box-rental-strip-inner .button { justify-self: start; }
   .footer-grid { gap: 45px; grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .footer-bottom-links { gap: 18px; }
