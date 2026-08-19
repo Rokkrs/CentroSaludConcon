@@ -1,21 +1,14 @@
 ---
 import { site } from "../data/site";
-import SectionMarker from "./SectionMarker.astro";
 ---
 
-<section class="final-cta section-identified" aria-labelledby="cta-title">
-  <SectionMarker number="07" label="Arrienda tu box" light />
-  <div class="cta-orbit" aria-hidden="true"></div>
-  <div class="container cta-grid" data-reveal>
-    <div>
-      <p class="eyebrow light"><span></span> Para profesionales</p>
-      <h2 id="cta-title">Un espacio profesional para <em>tu práctica clínica</em></h2>
+<aside id="arriendo-box" class="box-rental-strip" aria-labelledby="box-rental-title">
+  <div class="container box-rental-strip-inner" data-reveal>
+    <div class="box-rental-heading">
+      <p class="eyebrow"><span></span> Para profesionales</p>
+      <h2 id="box-rental-title">Arrienda un box <em>en Viña del Mar</em></h2>
     </div>
-    <div class="cta-copy">
-      <p>¿Eres profesional de la salud? Arrienda un box equipado en Viña del Mar para atender a tus pacientes.</p>
-      <div class="cta-actions">
-        <a class="button button-reserve button-large" href={site.boxReservo} target="_blank" rel="noopener noreferrer"><span>Arrienda tu box</span></a>
-      </div>
-    </div>
+    <p>Un espacio equipado para que profesionales de la salud atiendan a sus pacientes.</p>
+    <a class="button button-reserve" href={site.boxReservo} target="_blank" rel="noopener noreferrer"><span>Arrienda tu box</span></a>
   </div>
-</section>
+</aside>

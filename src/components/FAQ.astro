@@ -4,7 +4,7 @@ import SectionMarker from "./SectionMarker.astro";
 ---
 
 <section id="preguntas-frecuentes" class="section faq section-identified" aria-labelledby="faq-title">
-  <SectionMarker number="08" label="Preguntas frecuentes" />
+  <SectionMarker number="07" label="Preguntas frecuentes" />
   <div class="container split-layout faq-layout">
     <div class="faq-intro" data-reveal>
       <p class="eyebrow"><span></span> Preguntas frecuentes</p>
@@ -16,6 +16,11 @@ import SectionMarker from "./SectionMarker.astro";
         <details class="faq-item">
           <summary>{item.question}</summary>
           <p>{item.answer}</p>
+          {item.action && (
+            <a class="faq-action" href={item.action.href} target="_blank" rel="noopener noreferrer">
+              {item.action.label}<span aria-hidden="true">→</span>
+            </a>
+          )}
         </details>
       ))}
     </div>

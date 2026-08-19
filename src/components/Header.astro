@@ -55,11 +55,13 @@ import { homePath, navigation, site, withBase } from "../data/site";
   );
 
   if (location.hash) {
+    const initialHash = location.hash;
     window.addEventListener(
-      "DOMContentLoaded",
+      "load",
       () => {
-        cleanHash();
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        const target = document.querySelector<HTMLElement>(initialHash);
+        if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+        requestAnimationFrame(cleanHash);
       },
       { once: true },
     );

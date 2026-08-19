@@ -184,12 +184,11 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .achievement-grid h3 { color: var(--ink); font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin-bottom: 6px; }
 .achievement-grid p { color: var(--muted); font-size: .78rem; margin: 0; }
 
-.final-cta { background: var(--ink-deep); color: var(--white); overflow: hidden; padding: 100px 0; position: relative; }
-.cta-grid { align-items: end; display: grid; gap: 95px; grid-template-columns: 1.15fr .85fr; position: relative; z-index: 1; }
-.final-cta h2 { color: var(--white); margin: 0; }
-.cta-copy > p { color: #b1c8ca; }
-.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-.cta-orbit { border: 1px solid rgba(255,255,255,.09); border-radius: 50%; height: 540px; position: absolute; right: -170px; top: -250px; width: 540px; }
+.box-rental-strip { background: var(--mist); border-bottom: 1px solid #cfdfdd; border-top: 1px solid #cfdfdd; padding: 42px 0; }
+.box-rental-strip-inner { align-items: center; display: grid; gap: 52px; grid-template-columns: 1.15fr 1fr auto; }
+.box-rental-heading .eyebrow { margin-bottom: 9px; }
+.box-rental-heading h2 { font-size: clamp(1.65rem, 2.3vw, 2.35rem); margin: 0; }
+.box-rental-strip-inner > p { color: var(--muted); font-size: .84rem; line-height: 1.55; margin: 0; max-width: 380px; }
 
 .faq { padding: 80px 0; }
 .faq-intro h2 { font-size: clamp(1.9rem, 2.6vw, 2.5rem); }
@@ -202,6 +201,12 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item:hover summary { color: var(--coral); }
 .faq-item p { color: var(--muted); font-size: .85rem; line-height: 1.55; margin: 14px 0 0; padding-right: 34px; }
+.faq-action { align-items: center; color: var(--ink); display: inline-flex; font-size: .78rem; font-weight: 600; gap: 10px; margin-top: 13px; padding-bottom: 3px; position: relative; }
+.faq-action::after { background: currentColor; bottom: 0; content: ""; height: 1px; left: 0; position: absolute; transform: scaleX(0); transform-origin: right; transition: transform .25s ease; width: 100%; }
+.faq-action:hover { color: var(--coral-dark); }
+.faq-action:hover::after { transform: scaleX(1); transform-origin: left; }
+.faq-action span { transition: transform .25s ease; }
+.faq-action:hover span { transform: translateX(3px); }
 
 .footer { background: #06262e; color: #a7bdc0; padding: 78px 0 26px; }
 .brand-light .brand-mark { background: var(--white); color: var(--ink); }
@@ -318,7 +323,6 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .international-grid { gap: 45px; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .team-card-5 { grid-column: 1 / -1; width: calc(50% - 11px); }
-  .cta-grid { gap: 60px; }
   .testimonials-hero-grid, .stories-heading, .testimonial-guidelines-grid, .testimonials-cta-grid { gap: 55px; }
   .simple-cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -365,7 +369,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .international-grid { flex-direction: column; align-items: flex-start; gap: 18px; }
   .partner-row { gap: 26px 34px; justify-content: flex-start; }
   .partner-row img { height: 28px; }
-  .split-layout, .section-heading, .cta-grid { gap: 40px; grid-template-columns: 1fr; }
+  .split-layout, .section-heading { gap: 40px; grid-template-columns: 1fr; }
   .about-copy { padding-top: 0; }
   .check-list { grid-template-columns: 1fr; }
   .section-heading, .team-intro { margin-bottom: 45px; }
@@ -377,8 +381,9 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .team-card-5 { grid-column: auto; width: auto; }
   .research-strip { margin-top: 36px; padding-top: 26px; }
   .achievement-grid { grid-template-columns: 1fr; }
-  .final-cta { padding: 84px 0; }
-  .cta-actions { flex-direction: column; }
+  .box-rental-strip { padding: 38px 0; }
+  .box-rental-strip-inner { align-items: flex-start; gap: 20px; grid-template-columns: 1fr; }
+  .box-rental-strip-inner .button { justify-self: start; }
   .footer-grid { gap: 45px; grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; }
   .footer-bottom-links { gap: 18px; }

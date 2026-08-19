@@ -26,6 +26,6 @@ export const navigation = [
   { label: "Especialidades", href: withBase(`${homePath}#servicios`) },
   { label: "Equipo", href: withBase(`${homePath}#equipo`) },
   { label: "Testimonios", href: withBase("testimonios/") },
-  { label: "Investigación", href: withBase(`${homePath}#trayectoria`) },
+  { label: "Arriendo de box", href: withBase(`${homePath}#arriendo-box`) },
   { label: "Contacto", href: withBase(`${homePath}#contacto`) },
 ];
