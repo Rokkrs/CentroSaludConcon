@@ -1,63 +1,41 @@
 export const featuredTestimonial = {
-  quote:
-    "IID cambió nuestras vidas. Nos sentimos escuchados, comprendidos y acompañados en cada paso del proceso.",
-  author: "Familia R.",
-  context: "Experiencia familiar",
+  quote: "Un personal altamente capacitado con calidad humana y atención personalizada.",
+  author: "Allison Escoto",
+  context: "Atención del equipo",
   rating: 5,
 };
 
 export const testimonialPlaceholders = [
   {
-    quote:
-      "La evaluación nos permitió entender mejor lo que estaba ocurriendo y tomar decisiones con mayor tranquilidad.",
-    author: "Familia A.",
-    context: "Evaluación especializada",
-    title: "Comprender para tomar mejores decisiones",
-    description:
-      "Espacio reservado para una experiencia validada sobre el proceso de evaluación y la claridad de sus resultados.",
+    quote: "Excelente espacio para aprender y crecer. ¡Felicitaciones!",
+    author: "Carla Casas-Cordero",
+    context: "Experiencia general",
     rating: 5,
   },
   {
     quote:
-      "Desde la primera sesión sentimos que nuestra experiencia era escuchada con respeto y sin prejuicios.",
-    author: "Persona adulta",
-    context: "Acompañamiento clínico",
-    title: "Una atención donde la persona se siente escuchada",
-    description:
-      "Espacio reservado para un testimonio autorizado sobre el vínculo con el equipo profesional.",
+      "Quiero agradecer profundamente el trabajo de Isabel Gamboa, psicóloga del centro, con mi hija. Desde el primer momento demostró una gran calidad humana, empatía y profesionalismo, generando un ambiente de confianza que permitió que mi hija se sintiera segura y cómoda durante todo el proceso. Es un lugar donde se nota la vocación y el cariño por lo que hacen; lo recomiendo con total confianza a las familias que busquen un espacio serio, humano y comprometido.",
+    author: "Madre de paciente",
+    context: "Acompañamiento psicológico",
     rating: 5,
   },
   {
     quote:
-      "Recibimos herramientas claras que pudimos aplicar en casa y conversar con el entorno educativo.",
-    author: "Familia M.",
-    context: "Orientación a familias",
-    title: "Herramientas para acompañar con más confianza",
-    description:
-      "Espacio reservado para relatar cómo la orientación recibida se traduce en la vida cotidiana.",
+      "Me encantó. Como adulta buscaba un lugar donde me acogieran y tuvieran paciencia; ser neurodivergente no es fácil, y ahora estoy mucho mejor. ¡Muchas gracias al equipo!",
+    author: "Josefa Soto",
+    context: "Atención a adultos",
     rating: 5,
   },
   {
     quote:
-      "La modalidad online nos permitió acceder a un equipo especializado sin importar nuestra ubicación.",
-    author: "Familia de región",
-    context: "Atención online",
-    title: "Especialización accesible desde otras regiones",
-    description: "Espacio reservado para una experiencia autorizada sobre atención remota.",
-    rating: 5,
-  },
-  {
-    quote:
-      "El informe fue claro y nos ayudó a comprender tanto las necesidades como las fortalezas observadas.",
-    author: "Familia C.",
-    context: "Evaluación cognitiva",
-    title: "Resultados comprensibles y útiles",
-    description: "Espacio reservado para una experiencia validada sobre devolución de resultados.",
+      "Quisiera agradecerles por su trabajo: vino la abuela de Máximo de visita y no podía creer que ahora come verduras, ¡algo impensado para todos! Muchísimas gracias por su linda labor, en especial a su terapeuta ocupacional.",
+    author: "Familia de Máximo",
+    context: "Terapia ocupacional",
     rating: 5,
   },
 ];
 
 export const allTestimonials = [
   { ...featuredTestimonial, validated: true },
-  ...testimonialPlaceholders.map((item) => ({ ...item, validated: false })),
+  ...testimonialPlaceholders.map((item) => ({ ...item, validated: true })),
 ];
