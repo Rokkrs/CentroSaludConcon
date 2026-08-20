@@ -35,7 +35,7 @@ import SectionMarker from "./SectionMarker.astro";
       <dl>
         <div><dt>Correo</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
         <div><dt>Ubicación</dt><dd>{site.address}<br /><a href={site.maps} target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></dd></div>
-        <div><dt>Horario</dt><dd>{site.hours}</dd></div>
+        <div><dt>Horario</dt><dd>{site.hours.map((line) => <span class="footer-hours-line">{line}</span>)}</dd></div>
       </dl>
     </div>
   </div>

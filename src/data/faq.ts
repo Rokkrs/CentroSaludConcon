@@ -8,11 +8,12 @@ export const faq = [
   },
   {
     question: "¿Dónde está ubicado el centro?",
-    answer: "Nuestro centro realiza atención presencial en Viña del Mar, Región de Valparaíso, además de atención online para otras regiones de Chile.",
+    answer: `Nuestro centro realiza atención presencial en ${site.address}, además de atención online para otras regiones de Chile.`,
+    action: { label: "Ver en el mapa", href: site.maps },
   },
   {
     question: "¿Qué atenciones y evaluaciones ofrecen?",
-    answer: "Contamos con atención en psiquiatría, psicología, terapia ocupacional y fonoaudiología, además de evaluaciones especializadas como ADOS-2, WISC-V y perfil sensorial.",
+    answer: "Contamos con atención en psiquiatría, psicología, terapia ocupacional y fonoaudiología, además de evaluaciones especializadas como ADOS-2, WISC-V, Perfil sensorial y otros.",
   },
   {
     question: "¿Para qué edades atienden?",
@@ -24,10 +25,11 @@ export const faq = [
   },
   {
     question: "¿Qué formas de pago están disponibles?",
-    answer: "Puedes consultar con nuestro equipo los medios de pago disponibles y las opciones aplicables a cada atención antes de realizar la reserva.",
+    answer: "Aceptamos transferencia electrónica. Se entrega boleta para reembolso en Isapres y seguros complementarios.",
   },
   {
-    question: "¿Cómo puedo saber qué atención necesito?",
-    answer: "Puedes revisar nuestras especialidades y evaluaciones disponibles. Si todavía tienes dudas, nuestro equipo puede orientarte antes de realizar la reserva.",
+    question: "¿Cómo puedo solicitar una hora?",
+    answer: "Puedes agendar directamente desde la página web o escribirnos por WhatsApp. Te responderemos a la brevedad para coordinar una hora según tu disponibilidad.",
+    action: { label: "Escribir por WhatsApp", href: site.whatsapp },
   },
 ];
