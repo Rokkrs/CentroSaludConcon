@@ -16,10 +16,10 @@ export const team = [
   {
     name: "María Isabel Gamboa",
     role: "Psicóloga Clínica",
-    specialty: "Evaluación diagnóstica para TEA (ADOS-2)",
+    specialty: "Evaluación diagnóstica para TEA (ADOS‑2)",
     credentials: [
       { label: "Formación internacional", text: "Magíster en Psicología Educacional, University of Melbourne, Australia" },
-      { label: "Evaluación especializada", text: "Acreditada ADOS-2 para evaluación diagnóstica de TEA" },
+      { label: "Evaluación especializada", text: "Acreditada ADOS‑2 para evaluación diagnóstica de TEA" },
       { label: "Experiencia internacional", text: "Royal Children’s Hospital y centros especializados en Australia" },
       { label: "Trayectoria clínica", text: "Más de 20 años acompañando a niños, niñas, adolescentes, adultos y familias" },
     ],
@@ -32,7 +32,7 @@ export const team = [
     specialty: "Evaluación y psicoterapia infanto-juvenil basada en evidencia",
     credentials: [
       { label: "Bienestar y salud mental", text: "Diplomada en Salud Mental y Bienestar Personal" },
-      { label: "Evaluación especializada", text: "Acreditada ADOS-2 para evaluación diagnóstica de TEA" },
+      { label: "Evaluación especializada", text: "Acreditada ADOS‑2 para evaluación diagnóstica de TEA" },
       { label: "Psicoterapia basada en evidencia", text: "Técnicas cognitivo-conductuales y psicodiagnóstico infantil integral" },
       { label: "Infancia y trauma", text: "Terapia de juego, habilidades lúdicas, psicoterapia infantil y clínica del trauma" },
     ],
