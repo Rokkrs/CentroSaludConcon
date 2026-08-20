@@ -16,7 +16,7 @@ const {
   structuredData,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const socialImage = new URL(withBase("images/reference/client-reference.jpeg"), Astro.site ?? Astro.url.origin);
+const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro.url.origin);
 ---
 
 <!doctype html>
@@ -27,7 +27,9 @@ const socialImage = new URL(withBase("images/reference/client-reference.jpeg"), 
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content="#0c3f4c" />
-    <link rel="icon" type="image/png" href={withBase("favicon.png")} />
+    <link rel="icon" type="image/png" sizes="160x160" href={withBase("favicon.png")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={withBase("favicon.ico")} />
+    <link rel="apple-touch-icon" sizes="160x160" href={withBase("favicon.png")} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CL" />
@@ -36,11 +38,16 @@ const socialImage = new URL(withBase("images/reference/client-reference.jpeg"), 
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="390" />
+    <meta property="og:image:height" content="180" />
     <meta property="og:image:alt" content="Atención especializada en neurodivergencia de Instituto Incluidos" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content="Logo de Instituto Incluidos por Derecho" />
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <title>{title}</title>
   </head>

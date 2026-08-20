@@ -22,27 +22,28 @@ const consultationName = member.name.split(" ")[0];
 ---
 
 <article class="team-card" data-reveal>
-  <div class="team-image">
-    <img src={member.image} alt={`Retrato de ${member.name}`} width="800" height="900" loading="lazy" />
-  </div>
-  <div class="team-content">
-    <p class="team-name">{member.name}</p>
-    <h3 class="team-role">{member.role}</h3>
-
-    <div class="team-specialty-block">
-      <span>Área de especialidad</span>
+  <header class="team-card-header">
+    <div class="team-image">
+      <img src={member.image} alt={`Retrato de ${member.name}`} width="800" height="800" loading="lazy" />
+    </div>
+    <div class="team-heading">
+      <p class="team-name">{member.name}</p>
+      <h3 class="team-role">{member.role}</h3>
       <p class="team-specialty">{member.specialty}</p>
     </div>
-
+  </header>
+  <div class="team-content">
     <p class="team-bio">{member.bio}</p>
 
     {member.credentials.length > 0 && (
       <div class="team-credentials">
-        <p>Formación y logros</p>
+        <p>Experiencia que destaca</p>
         {member.credentials.map((item) => (
           <div class="team-credential">
-            <p class="team-credential-label">{item.label}</p>
-            <p class="team-credential-text">{item.text}</p>
+            <div>
+              <p class="team-credential-label">{item.label}</p>
+              <p class="team-credential-text">{item.text}</p>
+            </div>
           </div>
         ))}
       </div>

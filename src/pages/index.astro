@@ -1,9 +1,52 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, withBase } from "../data/site";
+
+const logoUrl = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro.url.origin).toString();
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).toString();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${pageUrl}#organization`,
+      name: site.name,
+      alternateName: "Instituto Incluidos por Derecho",
+      url: pageUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: logoUrl,
+        width: 390,
+        height: 180,
+      },
+      image: logoUrl,
+      sameAs: [site.instagram],
+      email: site.email,
+      telephone: site.phone,
+    },
+    {
+      "@type": "MedicalClinic",
+      "@id": `${pageUrl}#clinic`,
+      name: site.name,
+      url: pageUrl,
+      logo: logoUrl,
+      image: logoUrl,
+      description: site.description,
+      telephone: site.phone,
+      email: site.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "7 norte 645, Edificio Centro Libertad, Oficina 409",
+        addressLocality: "Viña del Mar",
+        addressRegion: "Valparaíso",
+        addressCountry: "CL",
+      },
+    },
+  ],
+};
 ---
 
-<BaseLayout noindex>
+<BaseLayout title={`${site.name} | Atención profesional especializada`} description={site.description} structuredData={structuredData}>
   <main class="splash">
     <img
       class="splash-logo"

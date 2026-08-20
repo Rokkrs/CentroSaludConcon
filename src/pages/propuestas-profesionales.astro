@@ -1,0 +1,144 @@
+---
+import { team } from "../data/team";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const shortTeam = team.slice(0, 3);
+const consultationLabel = (name: string) => name.split(" ")[0];
+---
+
+<BaseLayout title="Propuestas de cards | Instituto Incluidos" noindex>
+  <main class="proposals-page">
+    <header class="proposals-hero">
+      <div class="proposals-wrap">
+        <a class="proposals-back" href="/preview/">← Volver a la vista del sitio</a>
+        <p class="proposals-kicker">Dirección de diseño · Equipo clínico</p>
+        <h1>Tres formas de presentar la experiencia de cada profesional.</h1>
+        <p class="proposals-lead">Explora tres sistemas visuales con una misma base clínica: evidencia, trayectoria y una atención humana que se puede reconocer rápidamente.</p>
+        <div class="proposals-meta"><span>5 profesionales</span><span>Credenciales reutilizables</span><span>Responsive</span></div>
+      </div>
+    </header>
+
+    <section class="proposal proposal-academic" aria-labelledby="academic-title">
+      <div class="proposals-wrap">
+        <div class="proposal-intro">
+          <div><span class="proposal-number">01</span><p class="proposal-kicker">Academic Clinical · Melbourne</p><h2 id="academic-title">Prestigio académico, lectura clara.</h2></div>
+          <p>La opción más institucional: ordena la información como un perfil clínico universitario y permite comparar credenciales sin abrumar.</p>
+        </div>
+        <div class="academic-grid">
+          {shortTeam.map((member, index) => (
+            <article class="academic-card">
+              <header class="academic-head"><img src={member.image} alt={`Retrato de ${member.name}`} /><div><p>{member.name}</p><h3>{member.role}</h3><span>{member.specialty}</span></div></header>
+              <p class="academic-bio">{member.bio}</p>
+              <ul class="academic-credentials">{member.credentials.slice(0, 3).map((item) => <li><span><strong>{item.label}</strong><small>{item.text}</small></span></li>)}</ul>
+              <a href="#decision">Consultar con {consultationLabel(member.name)} <span>→</span></a>
+            </article>
+          ))}
+        </div>
+        <div class="academic-mini-row">{team.slice(3).map((member) => <span><b>{member.name}</b>{member.role}</span>)}</div>
+      </div>
+    </section>
+
+    <section class="proposal proposal-specialty" aria-labelledby="specialty-title">
+      <div class="proposals-wrap">
+        <div class="proposal-intro">
+          <div><span class="proposal-number">02</span><p class="proposal-kicker">US Specialty Profile · Private practice</p><h2 id="specialty-title">Credenciales que se escanean en segundos.</h2></div>
+          <p>Una card más comercial y directa, pensada para pacientes que comparan especialistas antes de agendar.</p>
+        </div>
+        <div class="specialty-list">
+          {team.slice(0, 4).map((member, index) => (
+            <article class="specialty-card">
+              <div class="specialty-photo"><img src={member.image} alt={`Retrato de ${member.name}`} /><span>0{index + 1}</span></div>
+              <div class="specialty-body"><p class="specialty-name">{member.name}</p><h3>{member.role}</h3><p class="specialty-focus">{member.specialty}</p><div class="specialty-tags">{member.credentials.slice(0, 3).map((item) => <span>{item.label}</span>)}</div><a href="#decision">Ver perfil clínico <span>↗</span></a></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal proposal-journal" aria-labelledby="journal-title">
+      <div class="proposals-wrap">
+        <div class="proposal-intro">
+          <div><span class="proposal-number">03</span><p class="proposal-kicker">Clinical Journal · Editorial</p><h2 id="journal-title">Una trayectoria que también se siente.</h2></div>
+          <p>La opción más humana y memorable: combina una frase personal con tres hitos esenciales y deja el resto disponible bajo demanda.</p>
+        </div>
+        <div class="journal-grid">
+          {team.map((member) => (
+            <article class="journal-card"><div class="journal-photo"><img src={member.image} alt={`Retrato de ${member.name}`} /><span>{member.role}</span></div><div class="journal-body"><p class="journal-name">{member.name}</p><blockquote>“{member.bio}”</blockquote><div class="journal-highlights">{member.credentials.slice(0, 3).map((item) => <span><b>{item.label}</b></span>)}</div><a href="#decision">Conocer su trayectoria <span>→</span></a></div></article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="decision" id="decision">
+      <div class="proposals-wrap"><p class="proposal-kicker">Recomendación de diseño</p><h2>Mi recomendación: empezar por Academic Clinical.</h2><p>Es la alternativa que mejor equilibra prestigio Australia/USA, claridad clínica y crecimiento futuro. Podemos combinarla con las etiquetas de credenciales de la opción US Specialty Profile.</p><div class="decision-actions"><a href="/preview/">Ver cards actuales <span>→</span></a><a href="#academic-title">Volver a la alternativa 01 <span>↑</span></a></div></div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .proposals-page { --proposal-ink: #103b45; --proposal-deep: #082f39; --proposal-teal: #1d7686; --proposal-coral: #d95832; --proposal-paper: #f7f8f4; --proposal-line: #dce5e3; background: var(--proposal-paper); color: var(--proposal-ink); }
+  .proposals-wrap { margin: 0 auto; max-width: 1180px; width: min(100% - 40px, 1180px); }
+  .proposals-hero { background: var(--proposal-deep); color: #dceceb; padding: 70px 0 78px; }
+  .proposals-back { color: #a8c5c7; display: inline-block; font-size: .75rem; margin-bottom: 70px; }
+  .proposals-back:hover { color: white; }
+  .proposals-kicker { color: var(--proposal-coral); font-size: .66rem; font-weight: 700; letter-spacing: .14em; margin: 0 0 14px; text-transform: uppercase; }
+  .proposals-hero h1 { color: white; font-size: clamp(3rem, 6vw, 5.7rem); margin: 0; max-width: 930px; }
+  .proposals-lead { color: #a8c5c7; font-size: 1rem; line-height: 1.7; margin: 28px 0 0; max-width: 610px; }
+  .proposals-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
+  .proposals-meta span { border: 1px solid rgba(255,255,255,.2); border-radius: 100px; color: #c4d9da; font-size: .65rem; padding: 7px 12px; }
+  .proposal { padding: 110px 0; }
+  .proposal + .proposal { border-top: 1px solid var(--proposal-line); }
+  .proposal-intro { align-items: end; display: grid; gap: 70px; grid-template-columns: 1.2fr .8fr; margin-bottom: 48px; }
+  .proposal-intro > p { color: #64777b; font-size: .86rem; line-height: 1.65; margin: 0 0 4px; max-width: 330px; }
+  .proposal-number { color: var(--proposal-coral); display: block; font-family: var(--serif); font-size: 1rem; margin-bottom: 15px; }
+  .proposal-intro h2 { color: var(--proposal-ink); font-size: clamp(2.25rem, 4vw, 4.15rem); margin: 0; }
+  .academic-grid { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); }
+  .academic-card { background: white; border: 1px solid var(--proposal-line); border-radius: 16px; box-shadow: 0 15px 40px rgba(10,52,61,.05); display: flex; flex-direction: column; padding: 18px; }
+  .academic-head { align-items: center; display: grid; gap: 16px; grid-template-columns: 92px 1fr; }
+  .academic-head img { aspect-ratio: 1; border-radius: 10px; height: 92px; object-fit: cover; object-position: center 18%; width: 92px; }
+  .academic-head p { color: var(--proposal-teal); font-size: .6rem; font-weight: 700; letter-spacing: .1em; margin: 0 0 5px; text-transform: uppercase; }
+  .academic-head h3 { color: var(--proposal-deep); font-family: var(--sans); font-size: 1.45rem; letter-spacing: -.04em; line-height: 1.05; margin: 0 0 8px; }
+  .academic-head span { color: var(--proposal-coral); display: block; font-size: .68rem; font-weight: 600; hyphens: none; line-height: 1.35; overflow-wrap: normal; word-break: normal; }
+  .academic-bio { color: #6c7c80; font-size: .74rem; line-height: 1.55; margin: 20px 0; }
+  .academic-credentials { border-top: 1px solid var(--proposal-line); list-style: none; margin: 0; padding: 14px 0 0; }
+  .academic-credentials li { align-items: flex-start; display: flex; gap: 10px; padding: 7px 0; }
+  .academic-credentials li > span { display: flex; flex-direction: column; gap: 2px; }
+  .academic-credentials strong { color: var(--proposal-ink); font-size: .68rem; }
+  .academic-credentials small { color: #718286; font-size: .65rem; line-height: 1.4; }
+  .academic-card > a, .specialty-body > a, .journal-body > a { align-items: center; border-top: 1px solid var(--proposal-line); color: var(--proposal-ink); display: flex; font-size: .7rem; font-weight: 700; justify-content: space-between; margin-top: auto; padding-top: 15px; }
+  .academic-card > a span, .specialty-body > a span, .journal-body > a span { color: var(--proposal-coral); font-size: 1.2rem; }
+  .academic-mini-row { display: flex; gap: 12px; margin-top: 18px; }
+  .academic-mini-row span { background: #eaf3f2; color: #577378; display: flex; flex-direction: column; font-size: .68rem; padding: 12px 14px; width: 50%; }
+  .academic-mini-row b { color: var(--proposal-ink); font-size: .72rem; margin-bottom: 2px; }
+  .proposal-specialty { background: #edf4f3; }
+  .specialty-list { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
+  .specialty-card { background: white; border: 1px solid #d3e1df; display: grid; grid-template-columns: 145px 1fr; min-height: 235px; }
+  .specialty-photo { min-height: 100%; overflow: hidden; position: relative; }
+  .specialty-photo img { height: 100%; object-fit: cover; object-position: center 18%; width: 100%; }
+  .specialty-photo span { background: var(--proposal-coral); color: white; font-family: var(--serif); font-size: .75rem; left: 12px; padding: 5px 8px; position: absolute; top: 12px; }
+  .specialty-body { display: flex; flex-direction: column; padding: 23px; }
+  .specialty-name { color: var(--proposal-teal); font-size: .61rem; font-weight: 700; letter-spacing: .1em; margin: 0 0 5px; text-transform: uppercase; }
+  .specialty-body h3 { color: var(--proposal-deep); font-family: var(--sans); font-size: 1.75rem; letter-spacing: -.04em; line-height: 1; margin: 0; }
+  .specialty-focus { color: var(--proposal-coral); font-size: .75rem; font-weight: 600; hyphens: none; line-height: 1.35; margin: 12px 0 15px; overflow-wrap: normal; word-break: normal; }
+  .specialty-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .specialty-tags span { align-items: center; background: #eff6f5; color: var(--proposal-ink); display: inline-flex; font-size: .6rem; gap: 6px; padding: 5px 7px; }
+  .proposal-journal { background: white; }
+  .journal-grid { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); }
+  .journal-card { border: 1px solid var(--proposal-line); display: flex; flex-direction: column; }
+  .journal-photo { aspect-ratio: 1.35; overflow: hidden; position: relative; }
+  .journal-photo img { height: 100%; object-fit: cover; object-position: center 18%; width: 100%; }
+  .journal-photo span { background: rgba(8,47,57,.9); bottom: 0; color: white; font-size: .62rem; font-weight: 700; left: 0; letter-spacing: .08em; padding: 9px 12px; position: absolute; text-transform: uppercase; }
+  .journal-body { display: flex; flex: 1; flex-direction: column; padding: 20px; }
+  .journal-name { color: var(--proposal-teal); font-size: .63rem; font-weight: 700; letter-spacing: .1em; margin: 0 0 11px; text-transform: uppercase; }
+  .journal-body blockquote { color: var(--proposal-ink); font-family: var(--serif); font-size: 1.06rem; line-height: 1.4; margin: 0 0 20px; }
+  .journal-highlights { border-top: 1px solid var(--proposal-line); display: grid; gap: 7px; padding: 15px 0 20px; }
+  .journal-highlights span { align-items: center; color: var(--proposal-ink); display: flex; font-size: .66rem; gap: 8px; }
+  .decision { background: var(--proposal-deep); color: white; padding: 95px 0; }
+  .decision h2 { color: white; font-size: clamp(2.4rem, 4vw, 4rem); margin: 0; max-width: 760px; }
+  .decision > .proposals-wrap > p:not(.proposal-kicker) { color: #aac4c6; font-size: .9rem; line-height: 1.65; margin: 22px 0 0; max-width: 590px; }
+  .decision-actions { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 30px; }
+  .decision-actions a { color: white; font-size: .75rem; font-weight: 700; }
+  .decision-actions span { color: var(--proposal-coral); font-size: 1.15rem; margin-left: 8px; }
+  @media (max-width: 900px) { .proposal-intro { gap: 35px; grid-template-columns: 1fr; } .academic-grid, .journal-grid { grid-template-columns: repeat(2, 1fr); } .specialty-list { grid-template-columns: 1fr; } }
+  @media (max-width: 620px) { .proposals-wrap { width: min(100% - 30px, 580px); } .proposals-hero { padding: 45px 0 55px; } .proposals-back { margin-bottom: 45px; } .proposal { padding: 75px 0; } .academic-grid, .journal-grid { grid-template-columns: 1fr; } .academic-mini-row { flex-direction: column; } .academic-mini-row span { width: 100%; } .specialty-card { grid-template-columns: 112px 1fr; } .specialty-body { padding: 17px; } .specialty-body h3 { font-size: 1.45rem; } }
+</style>
