@@ -175,6 +175,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .service-card .cta-icon { color: var(--coral); }
 
 .team { background: var(--white); padding-bottom: 72px; }
+.team { padding-top: 94px; }
 .team-intro { margin-bottom: 55px; }
 .team-intro h2 { margin: 0; max-width: 1080px; }
 .team-grid { display: grid; gap: 22px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -201,6 +202,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .team-profile-link:hover { color: var(--coral); }
 
 .research-strip { border-top: 1px solid var(--line); margin-top: 46px; padding-top: 34px; }
+.about { padding-top: 94px; }
 .achievement-grid { border-top: 1px solid var(--line); display: grid; gap: 0 40px; grid-template-columns: repeat(2, 1fr); }
 .achievement-grid article { border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 32px 1fr; padding: 16px 0; }
 .achievement-grid article > span { color: var(--coral); font-family: var(--serif); font-size: .7rem; }
@@ -352,6 +354,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .container { width: min(100% - 30px, 580px); }
   .section { padding: 84px 0; }
   .team { padding-bottom: 60px; }
+  .team, .about { padding-top: 64px; }
   .section-marker { border-width: 3px; font-size: .7rem; height: 40px; left: auto; right: 12px; top: 12px; width: 40px; }
   .trust-bar .section-marker, .international .section-marker { left: auto; right: 8px; top: 8px; transform: none; }
   .hero .section-marker { right: 14px; top: 12px; }
