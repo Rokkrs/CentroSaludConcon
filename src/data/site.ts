@@ -20,7 +20,7 @@ export const withBase = (path = "") => {
   return `${base}${path.replace(/^\/+/, "")}`;
 };
 
-export const homePath = "preview/";
+export const homePath = "";
 
 export const navigation = [
   { label: "Especialidades", href: withBase(`${homePath}#servicios`) },
