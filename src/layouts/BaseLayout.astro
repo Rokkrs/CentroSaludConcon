@@ -28,7 +28,7 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
     {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="theme-color" content="#0c3f4c" />
     <link rel="icon" type="image/png" sizes="160x160" href={withBase("favicon.png")} />
-    <link rel="icon" type="image/png" sizes="32x32" href={withBase("favicon.ico")} />
+    <link rel="icon" type="image/x-icon" href={withBase("favicon.ico")} />
     <link rel="apple-touch-icon" sizes="160x160" href={withBase("favicon.png")} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
@@ -50,6 +50,16 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
     <meta name="twitter:image:alt" content="Logo de Instituto Incluidos por Derecho" />
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <title>{title}</title>
+    <!-- Google tag (gtag.js) -->
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-T55SJS5HXB"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-T55SJS5HXB");
+    </script>
   </head>
   <body>
     <script is:inline>
@@ -81,6 +91,40 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
       };
       reveal();
       document.addEventListener("astro:page-load", reveal);
+
+      const trackEvent = (...args: unknown[]) => {
+        (window as any).gtag?.(...args);
+      };
+
+      document.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement | null;
+        const link = target?.closest("a[href]") as HTMLAnchorElement | null;
+        if (!link) return;
+        const href = link.href;
+        let eventName: string | null = null;
+        if (href.includes("wa.me")) eventName = "click_whatsapp";
+        else if (href.includes("reservo.cl")) eventName = "click_reservar";
+        else if (href.startsWith("mailto:")) eventName = "click_email";
+        else if (href.includes("instagram.com")) eventName = "click_instagram";
+        if (eventName) trackEvent("event", eventName);
+      });
+
+      const sectionEvents: Record<string, string> = { equipo: "view_equipo", servicios: "view_servicios" };
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const eventName = sectionEvents[entry.target.id];
+            if (eventName) trackEvent("event", eventName);
+            sectionObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.3 },
+      );
+      Object.keys(sectionEvents).forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) sectionObserver.observe(el);
+      });
 
       window.addEventListener("keydown", (event) => {
         const target = event.target as HTMLElement | null;
