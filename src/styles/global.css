@@ -39,7 +39,7 @@
 
 * { box-sizing: border-box; }
 html { background: #06262e; scroll-behavior: smooth; scroll-padding-top: 90px; }
-body { margin: 0; min-height: 100dvh; background: var(--paper); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+body { margin: 0; min-height: 100dvh; background: #06262e; color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 body.menu-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
@@ -101,7 +101,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .menu-toggle { background: transparent; border: 0; display: none; height: 44px; padding: 10px; width: 44px; }
 .menu-toggle span { background: var(--white); display: block; height: 2px; margin: 7px 0; transition: transform .25s; }
 
-.hero { overflow: hidden; padding: 44px 0 38px; position: relative; }
+.hero { background: var(--paper); overflow: hidden; padding: 44px 0 38px; position: relative; }
 .hero-grid { align-items: center; display: grid; gap: 74px; grid-template-columns: 1.08fr .92fr; }
 .hero-copy { padding-top: 28px; }
 .hero h1 { font-size: clamp(3rem, 5vw, 4.85rem); margin-bottom: 20px; }
@@ -202,7 +202,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .team-profile-link:hover { color: var(--coral); }
 
 .research-strip { border-top: 1px solid var(--line); margin-top: 46px; padding-top: 34px; }
-.about { padding-top: 94px; }
+.about { background: var(--paper); padding-top: 94px; }
 .achievement-grid { border-top: 1px solid var(--line); display: grid; gap: 0 40px; grid-template-columns: repeat(2, 1fr); }
 .achievement-grid article { border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 32px 1fr; padding: 16px 0; }
 .achievement-grid article > span { color: var(--coral); font-family: var(--serif); font-size: .7rem; }
@@ -210,7 +210,7 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .achievement-grid p { color: var(--muted); font-size: .78rem; margin: 0; }
 
 
-.faq { padding: 80px 0; }
+.faq { background: var(--paper); padding: 80px 0; }
 .faq-intro h2 { font-size: clamp(1.9rem, 2.6vw, 2.5rem); }
 .faq-intro > p { color: var(--muted); margin-top: 18px; max-width: 380px; }
 .faq-list { border-top: 1px solid var(--line); }
