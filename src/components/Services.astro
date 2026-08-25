@@ -1,20 +1,12 @@
 ---
 import { services } from "../data/services";
 import { site } from "../data/site";
-import SectionMarker from "./SectionMarker.astro";
-
-interface Props {
-  number?: string;
-}
-
-const { number = "04" } = Astro.props;
 
 const clinicalServices = services.filter((service) => service.category === "clinical");
 const assessments = services.filter((service) => service.category === "assessment");
 ---
 
 <section id="servicios" class="section services section-identified" aria-labelledby="services-title">
-  <SectionMarker number={number} label="Especialidades" light />
   <div class="container">
     <div class="section-heading" data-reveal>
       <div>
@@ -25,14 +17,12 @@ const assessments = services.filter((service) => service.category === "assessmen
     </div>
     <div class="service-group" data-reveal>
       <div class="service-group-heading">
-        <span>01</span>
         <div><h3>Atención clínica</h3><p>Acompañamiento profesional interdisciplinario.</p></div>
       </div>
       <div class="services-grid services-grid-clinical">
         {clinicalServices.map((service) => (
           <article class="service-card" data-reveal>
             <div class="service-card-content">
-              <span class="service-number">{service.number}</span>
               <div class="service-card-copy"><h3>{service.title}</h3><p>{service.description}</p></div>
               <a class="cta-link" href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>
                 <span class="cta-label">Agendar atención</span>
@@ -47,14 +37,12 @@ const assessments = services.filter((service) => service.category === "assessmen
     </div>
     <div class="service-group service-group-assessments" data-reveal>
       <div class="service-group-heading">
-        <span>02</span>
         <div><h3>Evaluaciones especializadas</h3><p>Procesos rigurosos para orientar decisiones clínicas.</p></div>
       </div>
       <div class="services-grid services-grid-assessments">
         {assessments.map((service) => (
           <article class="service-card service-card-assessment" data-reveal>
             <div class="service-card-content">
-              <span class="service-number">{service.number}</span>
               <div class="service-card-copy"><h3>{service.title}</h3><p>{service.description}</p></div>
               <a class="cta-link" href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>
                 <span class="cta-label">Agendar evaluación</span>

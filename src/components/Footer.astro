@@ -42,7 +42,7 @@ import SectionMarker from "./SectionMarker.astro";
   <div class="container footer-bottom">
     <span>© 2026 {site.name}. Todos los derechos reservados.</span>
     <div class="footer-bottom-links">
-      <a href="#">Política de privacidad</a>
+      <a href={withBase("documents/declaracion.pdf")} download="politica-de-privacidad.pdf">Política de privacidad</a>
     </div>
   </div>
 </footer>

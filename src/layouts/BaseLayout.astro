@@ -50,15 +50,19 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
     <meta name="twitter:image:alt" content="Logo de Instituto Incluidos por Derecho" />
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <title>{title}</title>
-    <!-- Google tag (gtag.js) -->
-    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-T55SJS5HXB"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-T55SJS5HXB");
+      window.loadAnalytics = () => {
+        if (window.__analyticsLoaded) return;
+        window.__analyticsLoaded = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", "G-T55SJS5HXB");
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-T55SJS5HXB";
+        document.head.appendChild(script);
+      };
     </script>
   </head>
   <body>
@@ -68,7 +72,30 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
       }
     </script>
     <slot />
+    <aside class="cookie-banner" data-cookie-banner aria-label="Preferencias de cookies" hidden>
+      <div class="cookie-banner-copy">
+        <strong>Tu privacidad importa</strong>
+        <p>Usamos cookies necesarias para el funcionamiento del sitio y, si lo autorizas, cookies analíticas para mejorar tu experiencia.</p>
+        <a href={withBase("documents/declaracion.pdf")} target="_blank" rel="noopener noreferrer">Conoce nuestra política de privacidad</a>
+      </div>
+      <div class="cookie-banner-actions">
+        <button type="button" class="cookie-button cookie-button-secondary" data-cookie-reject>Rechazar</button>
+        <button type="button" class="cookie-button cookie-button-primary" data-cookie-accept>Aceptar cookies</button>
+      </div>
+    </aside>
     <script>
+      const cookieBanner = document.querySelector("[data-cookie-banner]");
+      const cookieChoice = window.localStorage.getItem("iid-cookie-consent");
+      if (!cookieChoice) cookieBanner?.removeAttribute("hidden");
+      if (cookieChoice === "accepted") (window as any).loadAnalytics?.();
+      const saveCookieChoice = (choice: string) => {
+        window.localStorage.setItem("iid-cookie-consent", choice);
+        cookieBanner?.setAttribute("hidden", "true");
+        if (choice === "accepted") (window as any).loadAnalytics?.();
+      };
+      document.querySelector("[data-cookie-accept]")?.addEventListener("click", () => saveCookieChoice("accepted"));
+      document.querySelector("[data-cookie-reject]")?.addEventListener("click", () => saveCookieChoice("rejected"));
+
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const reveal = () => {
         const elements = document.querySelectorAll("[data-reveal]");
