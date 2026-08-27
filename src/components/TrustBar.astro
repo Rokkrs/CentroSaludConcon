@@ -1,5 +1,4 @@
 ---
-import SectionMarker from "./SectionMarker.astro";
 import { site } from "../data/site";
 
 const items = [
@@ -10,8 +9,7 @@ const items = [
 ];
 ---
 
-<section class="trust-bar section-identified" aria-label="Nuestros pilares">
-  <SectionMarker number="02" label="Indicadores de confianza" />
+<section class="trust-bar" aria-label="Nuestros pilares">
   <div class="container trust-grid">
     {items.map((item) =>
       item.href ? (

@@ -4,9 +4,10 @@ import { site } from "../data/site";
 
 const clinicalServices = services.filter((service) => service.category === "clinical");
 const assessments = services.filter((service) => service.category === "assessment");
+const subspecialties = services.filter((service) => service.category === "subspecialty");
 ---
 
-<section id="servicios" class="section services section-identified" aria-labelledby="services-title">
+<section id="servicios" class="section services" aria-labelledby="services-title">
   <div class="container">
     <div class="section-heading" data-reveal>
       <div>
@@ -43,9 +44,40 @@ const assessments = services.filter((service) => service.category === "assessmen
         {assessments.map((service) => (
           <article class="service-card service-card-assessment" data-reveal>
             <div class="service-card-content">
-              <div class="service-card-copy"><h3>{service.title}</h3><p>{service.description}</p></div>
+              <div class="service-card-copy">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <p class="service-specialists"><strong>Agenda con:</strong> {service.specialists?.join(" y ")}</p>
+              </div>
               <a class="cta-link" href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title}`}>
                 <span class="cta-label">Agendar evaluación</span>
+                <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+                  <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="service-group service-group-subspecialties" data-reveal>
+      <div class="service-group-heading">
+        <div>
+          <h3>Tratamientos de subespecialización</h3>
+          <p>Atenciones especializadas en TEA, TDA, TDAH y AACC.</p>
+        </div>
+      </div>
+      <div class="services-grid services-grid-subspecialties">
+        {subspecialties.map((service) => (
+          <article class="service-card service-card-subspecialty" data-reveal>
+            <div class="service-card-content">
+              <div class="service-card-copy">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <p class="service-specialists"><strong>Agenda con:</strong> {service.specialists?.join(" y ")}</p>
+              </div>
+              <a class="cta-link" href={site.reservo} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.title} con Carolina Jiménez`}>
+                <span class="cta-label">Agendar atención</span>
                 <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
                   <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" />
                 </svg>

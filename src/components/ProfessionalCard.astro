@@ -10,6 +10,7 @@ interface Props {
   member: {
     name: string;
     role: string;
+    audience?: string;
     specialty: string;
     credentials: Credential[];
     bio: string;
@@ -29,6 +30,7 @@ const consultationName = member.name.split(" ")[0];
     <div class="team-heading">
       <p class="team-name">{member.name}</p>
       <h3 class="team-role">{member.role}</h3>
+      {member.audience && <p class="team-audience">{member.audience}</p>}
       <p class="team-specialty">{member.specialty}</p>
     </div>
   </header>

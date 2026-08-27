@@ -20,7 +20,7 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
 ---
 
 <!doctype html>
-<html lang="es" class="hide-section-markers">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -153,13 +153,6 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
         if (el) sectionObserver.observe(el);
       });
 
-      window.addEventListener("keydown", (event) => {
-        const target = event.target as HTMLElement | null;
-        const isEditing = target?.matches("input, textarea, select, [contenteditable='true']");
-        if (isEditing || event.repeat || event.key.toLowerCase() !== "f") return;
-
-        document.documentElement.classList.toggle("hide-section-markers");
-      });
     </script>
   </body>
 </html>

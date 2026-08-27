@@ -30,9 +30,10 @@ export const services = [
   {
     number: "05",
     category: "assessment",
-    title: "Evaluación WISC-V",
+    title: "Evaluación integral AACC",
     description:
-      "Evaluación cognitiva completa para niños y adolescentes.",
+      "Evaluación integral de altas capacidades cognitivas para orientar apoyos y decisiones clínicas.",
+    specialists: ["Isabel Gamboa"],
   },
   {
     number: "06",
@@ -40,12 +41,54 @@ export const services = [
     title: "Evaluación ADOS-2",
     description:
       "Evaluación especializada para el diagnóstico del espectro autista.",
+    specialists: ["Isabel Gamboa", "Daniela Vásquez"],
   },
   {
     number: "07",
     category: "assessment",
+    title: "Evaluación WISC-V",
+    description:
+      "Evaluación cognitiva completa para niños y adolescentes.",
+    specialists: ["Isabel Gamboa"],
+  },
+  {
+    number: "08",
+    category: "subspecialty",
     title: "Perfil sensorial",
     description:
-      "Evaluación estandarizada de sistemas sensoriales, umbral neurológico y estrategias de autorregulación.",
+      "Evaluación del procesamiento sensorial para orientar apoyos y estrategias de autorregulación.",
+    specialists: ["Carolina Jiménez"],
+  },
+  {
+    number: "09",
+    category: "subspecialty",
+    title: "Evaluación integral de TEA",
+    description:
+      "Evaluación funcional integral para comprender necesidades, fortalezas y participación cotidiana.",
+    specialists: ["Carolina Jiménez"],
+  },
+  {
+    number: "10",
+    category: "subspecialty",
+    title: "Evaluación integral de TDAH",
+    description:
+      "Evaluación del desempeño ocupacional, funciones ejecutivas y necesidades de apoyo.",
+    specialists: ["Carolina Jiménez"],
+  },
+  {
+    number: "11",
+    category: "subspecialty",
+    title: "Selectividad alimentaria / TERIA / ARFID",
+    description:
+      "Evaluación e intervención en desafíos de alimentación desde terapia ocupacional.",
+    specialists: ["Carolina Jiménez"],
+  },
+  {
+    number: "12",
+    category: "subspecialty",
+    title: "Remediación cognitiva / flexibilidad cognitiva",
+    description:
+      "Intervención orientada a fortalecer estrategias cognitivas y adaptación a los cambios.",
+    specialists: ["Carolina Jiménez"],
   },
 ];

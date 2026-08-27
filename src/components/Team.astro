@@ -1,17 +1,9 @@
 ---
 import { team } from "../data/team";
 import ProfessionalCard from "./ProfessionalCard.astro";
-import SectionMarker from "./SectionMarker.astro";
-
-interface Props {
-  number?: string;
-}
-
-const { number = "06" } = Astro.props;
 ---
 
-<section id="equipo" class="section team section-identified" aria-labelledby="team-title">
-  <SectionMarker number={number} label="Equipo interdisciplinario" />
+<section id="equipo" class="section team" aria-labelledby="team-title">
   <div class="container">
     <div class="team-intro" data-reveal>
       <p class="eyebrow"><span></span> Equipo interdisciplinario</p>

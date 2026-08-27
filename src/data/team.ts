@@ -14,7 +14,7 @@ export const team = [
     image: withBase("images/team/natacha-loubies.jpg"),
   },
   {
-    name: "María Isabel Gamboa",
+    name: "Isabel Gamboa",
     role: "Psicóloga Clínica",
     specialty: "Evaluación diagnóstica para TEA (ADOS‑2)",
     credentials: [
@@ -29,7 +29,7 @@ export const team = [
   {
     name: "Daniela Vásquez",
     role: "Psicóloga Clínica",
-    specialty: "Evaluación y psicoterapia infanto-juvenil basada en evidencia",
+    specialty: "Evaluación y psicoterapia infanto-juvenil / Adultos / Parejas",
     credentials: [
       { label: "Bienestar y salud mental", text: "Diplomada en Salud Mental y Bienestar Personal" },
       { label: "Evaluación especializada", text: "Acreditada ADOS‑2 para evaluación diagnóstica de TEA" },
@@ -42,6 +42,7 @@ export const team = [
   {
     name: "Carolina Jiménez",
     role: "Terapeuta Ocupacional",
+    audience: "Atención infanto-juvenil / Adultos",
     specialty: "Integración sensorial y neurodivergencias",
     credentials: [
       { label: "Formación de postgrado", text: "Magíster (c) en Clínica de los Trastornos de la Conducta Alimentaria" },

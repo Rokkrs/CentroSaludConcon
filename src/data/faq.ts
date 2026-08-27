@@ -13,7 +13,7 @@ export const faq = [
   },
   {
     question: "¿Qué atenciones y evaluaciones ofrecen?",
-    answer: "Contamos con atención en psiquiatría, psicología, terapia ocupacional y fonoaudiología, además de evaluaciones especializadas como ADOS-2, WISC-V, Perfil sensorial y otros.",
+    answer: "Contamos con atención en psiquiatría, psicología, terapia ocupacional y fonoaudiología, además de evaluaciones especializadas como ADOS-2, WISC-V y evaluación integral de AACC, junto con tratamientos de subespecialización desde terapia ocupacional.",
   },
   {
     question: "¿Para qué edades atienden?",
