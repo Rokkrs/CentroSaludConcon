@@ -11,7 +11,7 @@ const [featured, ...rest] = allTestimonials;
 <BaseLayout title={`Testimonios | ${site.name}`} description="Experiencias reales de personas y familias que han vivido un proceso de evaluación y acompañamiento con nuestro equipo.">
   <Header />
   <main class="simple-testimonials featured-version">
-    <section class="simple-testimonials-hero"><div class="container"><p class="eyebrow"><span></span> Testimonios</p><h1>Una historia central. <em>Otras voces que la acompañan</em></h1></div></section>
+    <section class="simple-testimonials-hero"><div class="container"><p class="eyebrow"><span></span> Testimonios</p><h1>Cada proceso es único. <em>Voces de quienes han confiado en nosotros</em></h1></div></section>
     <section class="featured-testimonial-layout"><div class="container featured-testimonial-inner"><TestimonialCard {...featured} featured /><div class="featured-video"><strong>Acompañamiento que escucha</strong><small>Historias y experiencias compartidas con consentimiento</small></div></div></section>
     <section class="simple-testimonials-body"><div class="container simple-cards-grid compact-cards-grid">{rest.map((item) => <TestimonialCard {...item} />)}</div></section>
     <section class="simple-testimonials-footer"><div class="container"><a class="button button-reserve" href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agenda tu evaluación</span></a></div></section>
