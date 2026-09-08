@@ -141,6 +141,13 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
 .about-map-frame { aspect-ratio: 1537 / 1023; border: 1px solid var(--line); border-left: 3px solid var(--coral); overflow: hidden; }
 .about-map-frame iframe { border: 0; display: block; height: 100%; width: 100%; }
 .about-map-link { color: var(--ink); display: inline-flex; font-size: .72rem; font-weight: 600; gap: 8px; margin-top: 12px; }
+.whatsapp-float { align-items: center; background: #0d665c; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; bottom: 22px; box-shadow: 0 12px 28px rgba(8,47,57,.2); color: var(--white); display: flex; gap: 13px; padding: 10px 14px 10px 18px; position: fixed; right: 22px; transition: transform .25s ease, box-shadow .25s ease; z-index: 15; }
+.whatsapp-float:hover { box-shadow: 0 16px 34px rgba(8,47,57,.28); color: var(--white); transform: translateY(-3px); }
+.whatsapp-float-copy { display: flex; flex-direction: column; gap: 2px; }
+.whatsapp-float-copy strong { font-size: .7rem; }
+.whatsapp-float-copy small { color: #c7e7df; font-size: .58rem; }
+.whatsapp-float-icon { align-items: center; display: flex; height: 31px; justify-content: center; width: 31px; }
+.whatsapp-float-icon svg { height: 27px; width: 27px; }
 .cookie-banner { align-items: center; background: rgba(247,250,249,.98); border: 1px solid #c8d9d8; border-bottom: 0; border-radius: 16px 16px 0 0; bottom: 0; box-shadow: 0 -12px 35px rgba(8,47,57,.12); display: flex; gap: 28px; justify-content: space-between; left: 50%; max-width: 980px; padding: 20px 24px; position: fixed; transform: translateX(-50%); width: calc(100% - 32px); z-index: 20; }
 .cookie-banner[hidden] { display: none; }
 .cookie-banner-copy { max-width: 650px; }
@@ -444,6 +451,10 @@ h1 em, h2 em { color: var(--coral); font-weight: inherit; }
   .cookie-banner { align-items: stretch; flex-direction: column; gap: 15px; padding: 18px; }
   .cookie-banner-actions { width: 100%; }
   .cookie-button { flex: 1; }
+}
+
+@media (max-width: 700px) {
+  .whatsapp-float { bottom: 14px; right: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
