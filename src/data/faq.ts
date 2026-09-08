@@ -28,6 +28,10 @@ export const faq = [
     answer: "Aceptamos transferencia electrónica. Se entrega boleta para reembolso en Isapres y seguros complementarios.",
   },
   {
+    question: "¿Puedo solicitar devolución del dinero?",
+    answer: "No se realizan devoluciones. El pago anticipado asegura su derecho a atención en la hora reservada.",
+  },
+  {
     question: "¿Cómo puedo solicitar una hora?",
     answer: "Puedes agendar directamente desde la página web o escribirnos por WhatsApp. Te responderemos a la brevedad para coordinar una hora según tu disponibilidad.",
     action: { label: "Escribir por WhatsApp", href: site.whatsapp },

@@ -129,6 +129,10 @@ const socialImage = new URL(withBase("images/iid-logo.png"), Astro.site ?? Astro
         if (!link) return;
         const href = link.href;
         let eventName: string | null = null;
+        const service = link.dataset.service;
+        const professional = link.dataset.professional;
+        if (service) trackEvent("event", "select_service", { service_name: service });
+        if (professional) trackEvent("event", "select_professional", { professional_name: professional });
         if (href.includes("wa.me")) eventName = "click_whatsapp";
         else if (href.includes("reservo.cl")) eventName = "click_reservar";
         else if (href.startsWith("mailto:")) eventName = "click_email";
