@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { site, withBase } from "../../data/site";
+import { servicePages } from "../../data/servicePages";
+---
+
+<BaseLayout
+  title="Especialidades en Neurodivergencia en Viña del Mar"
+  description="Evaluación de autismo (TEA), TDAH, altas capacidades, terapia ocupacional, fonoaudiología y psiquiatría de adultos en Viña del Mar y online."
+>
+  <Header />
+  <main class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href={withBase("")}>Inicio</a><span aria-hidden="true">/</span>
+          <span aria-current="page">Especialidades</span>
+        </nav>
+        <p class="eyebrow"><span></span> Especialidades</p>
+        <h1>Especialidades en <em>neurodivergencia</em></h1>
+        <p class="service-hero-lead">Evaluación e intervención para niños, adolescentes y adultos, presencial en Viña del Mar y online para todo Chile.</p>
+      </div>
+    </section>
+    <section class="section services service-includes">
+      <div class="container">
+        <div class="service-includes-grid">
+          {servicePages.map((page) => (
+            <a class="service-card-content service-index-card cta-link" href={withBase(`especialidades/${page.slug}/`)}>
+              <h2>{page.label}</h2>
+              <p>{page.lead}</p>
+              <span class="cta-label">Ver especialidad</span>
+            </a>
+          ))}
+        </div>
+        <div class="service-index-cta">
+          <a class="button button-reserve button-large" href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agendar atención</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

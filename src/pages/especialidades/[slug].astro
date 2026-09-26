@@ -1,0 +1,164 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { site, withBase } from "../../data/site";
+import { team } from "../../data/team";
+import { servicePages, type ServicePage } from "../../data/servicePages";
+
+export function getStaticPaths() {
+  return servicePages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+interface Props {
+  page: ServicePage;
+}
+
+const { page } = Astro.props;
+const specialists = page.specialists
+  .map((name) => team.find((member) => member.name === name))
+  .filter((member) => member !== undefined);
+const related = servicePages.filter((item) => item.slug !== page.slug);
+
+const origin = Astro.site ?? Astro.url.origin;
+const pageUrl = new URL(Astro.url.pathname, origin).toString();
+const homeUrl = new URL(withBase(""), origin).toString();
+const indexUrl = new URL(withBase("especialidades/"), origin).toString();
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: page.title,
+      description: page.description,
+      inLanguage: "es-CL",
+      about: { "@type": "MedicalClinic", "@id": `${homeUrl}#clinic`, name: site.name },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Inicio", item: homeUrl },
+        { "@type": "ListItem", position: 2, name: "Especialidades", item: indexUrl },
+        { "@type": "ListItem", position: 3, name: page.label, item: pageUrl },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: page.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+
+<BaseLayout title={page.title} description={page.description} structuredData={structuredData}>
+  <Header />
+  <main class="service-page">
+    <section class="service-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href={withBase("")}>Inicio</a><span aria-hidden="true">/</span>
+          <a href={withBase("especialidades/")}>Especialidades</a><span aria-hidden="true">/</span>
+          <span aria-current="page">{page.label}</span>
+        </nav>
+        <p class="eyebrow"><span></span> {page.eyebrow}</p>
+        <h1>{page.heading} <em>{page.headingEmphasis}</em></h1>
+        <p class="service-hero-lead">{page.lead}</p>
+        <div class="service-hero-actions">
+          <a class="button button-reserve button-large" data-service={page.label} href={site.reservo} target="_blank" rel="noopener noreferrer"><span>Agendar atención</span></a>
+          <a class="hero-guidance-link" href={site.whatsapp} target="_blank" rel="noopener noreferrer">¿Tienes dudas?<span>Escríbenos por WhatsApp.</span></a>
+        </div>
+        <p class="hero-cta-note"><span aria-hidden="true"></span> Presencial en Viña del Mar y online para todo Chile</p>
+      </div>
+    </section>
+
+    <section class="section service-overview">
+      <div class="container split-layout">
+        <div>
+          <p class="eyebrow"><span></span> En qué consiste</p>
+          <p class="large-copy">{page.about}</p>
+        </div>
+        <div>
+          <h2 class="service-subtitle">¿Para quién es?</h2>
+          <ul class="service-audience">
+            {page.audience.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services service-includes" aria-labelledby="includes-title">
+      <div class="container">
+        <p class="eyebrow light"><span></span> Qué ofrecemos</p>
+        <h2 id="includes-title">Atenciones <em>disponibles</em></h2>
+        <div class="service-includes-grid">
+          {page.includes.map((item) => (
+            <article class="service-card-content">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section service-team" aria-labelledby="service-team-title">
+      <div class="container">
+        <p class="eyebrow"><span></span> Equipo</p>
+        <h2 id="service-team-title">Profesionales <em>a cargo</em></h2>
+        <div class="service-team-grid">
+          {specialists.map((member) => (
+            <article class="service-team-card">
+              <img src={member.image} alt={member.name} width="120" height="120" loading="lazy" />
+              <div>
+                <h3>{member.name}</h3>
+                <p class="service-team-role">{member.role}</p>
+                <p>{member.specialty}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <a class="text-link cta-link" href={withBase("#equipo")}>
+          <span class="cta-label">Conoce a todo el equipo</span>
+          <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" /></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="faq" aria-labelledby="service-faq-title">
+      <div class="container split-layout faq-layout">
+        <div class="faq-intro">
+          <p class="eyebrow"><span></span> Preguntas frecuentes</p>
+          <h2 id="service-faq-title">Dudas <em>habituales</em></h2>
+          <p>Dirección: {site.address}. Horario: {site.hours.join(" / ")}.</p>
+        </div>
+        <div class="faq-list">
+          {page.faqs.map((faq) => (
+            <details class="faq-item">
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="service-related" aria-labelledby="related-title">
+      <div class="container">
+        <h2 id="related-title" class="service-subtitle">Otras especialidades</h2>
+        <ul>
+          {related.map((item) => <li><a href={withBase(`especialidades/${item.slug}/`)}>{item.label}</a></li>)}
+        </ul>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

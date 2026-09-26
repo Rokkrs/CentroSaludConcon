@@ -1,6 +1,7 @@
 ---
 import { services } from "../data/services";
-import { site } from "../data/site";
+import { site, withBase } from "../data/site";
+import { servicePages } from "../data/servicePages";
 
 const clinicalServices = services.filter((service) => service.category === "clinical");
 const assessments = services.filter((service) => service.category === "assessment");
@@ -87,5 +88,11 @@ const subspecialties = services.filter((service) => service.category === "subspe
         ))}
       </div>
     </div>
+    <nav class="services-guides" aria-labelledby="services-guides-title" data-reveal>
+      <h3 id="services-guides-title">Conoce más sobre cada especialidad</h3>
+      <ul>
+        {servicePages.map((page) => <li><a href={withBase(`especialidades/${page.slug}/`)}>{page.label}</a></li>)}
+      </ul>
+    </nav>
   </div>
 </section>
